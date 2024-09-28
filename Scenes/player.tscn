@@ -155,7 +155,7 @@ script = ExtResource("1_wcnls")
 sprite_frames = SubResource("SpriteFrames_dpy1r")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.711529
+frame_progress = 0.214857
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Physics Body"]
 position = Vector2(0, 11)
