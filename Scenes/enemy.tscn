@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61q12v0meha5"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_67t81"]
+[ext_resource type="Texture2D" uid="uid://c3kmkd38ysv7y" path="res://Assets/icon.svg" id="2_rik8d"]
+
+[node name="Test_Enemy" type="Node2D"]
+script = ExtResource("1_67t81")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 9)
+texture = ExtResource("2_rik8d")
+
+[node name="HP_Label" type="Label" parent="."]
+offset_left = -27.0
+offset_top = -82.0
+offset_right = 14.0
+offset_bottom = -59.0
+text = "25HP"
+metadata/_edit_use_anchors_ = true

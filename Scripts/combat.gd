@@ -1,6 +1,13 @@
 extends Node
 
-@onready var hp_label = $Test_Enemy/HP_Label
+@onready var enemy = $Test_Enemy
+@onready var attack_button = $Comabt_UI/Attack_Button
 
 func _on_attack_button_pressed():
-	hp_label.text = '15HP'
+	if enemy != null:
+		enemy.hp -= 4
+
+
+func _on_test_enemy_died():
+	attack_button.hide()
+	enemy = null
