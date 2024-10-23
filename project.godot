@@ -17,8 +17,11 @@ config/icon="res://Assets/icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/scale=4.0
+window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom="res://Resources/DefaultTheme.tres"
 
 [input]
 

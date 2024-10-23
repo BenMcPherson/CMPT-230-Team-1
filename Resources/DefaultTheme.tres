@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ck1whime0hamn"]
+
+[ext_resource type="FontVariation" uid="uid://dticav6do5ai3" path="res://Resources/DefaultFont.tres" id="1_rdlsr"]
+[ext_resource type="StyleBox" uid="uid://do36sfgb07guq" path="res://Resources/Button9Slice.tres" id="1_u2nil"]
+[ext_resource type="StyleBox" uid="uid://br765s1jd4l6i" path="res://Resources/Button9SliceHover.tres" id="2_758uc"]
+[ext_resource type="StyleBox" uid="uid://bkx2xgvnxqg4g" path="res://Resources/Button9SlicePressed.tres" id="3_7ajct"]
+[ext_resource type="StyleBox" uid="uid://dxfx3jm3geyae" path="res://Resources/Panel9Slice.tres" id="4_g4jv7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7mbv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iacho"]
+
+[resource]
+default_font = ExtResource("1_rdlsr")
+default_font_size = 6
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = ExtResource("1_u2nil")
+Button/styles/focus = SubResource("StyleBoxEmpty_t7mbv")
+Button/styles/hover = ExtResource("2_758uc")
+Button/styles/normal = ExtResource("1_u2nil")
+Button/styles/pressed = ExtResource("3_7ajct")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_iacho")
+LineEdit/styles/normal = ExtResource("4_g4jv7")
+LineEdit/styles/read_only = ExtResource("4_g4jv7")
+OptionButton/styles/disabled = ExtResource("4_g4jv7")
+OptionButton/styles/disabled_mirrored = ExtResource("4_g4jv7")
+OptionButton/styles/focus = ExtResource("4_g4jv7")
+OptionButton/styles/hover = ExtResource("4_g4jv7")
+OptionButton/styles/hover_mirrored = ExtResource("4_g4jv7")
+OptionButton/styles/normal = ExtResource("4_g4jv7")
+OptionButton/styles/normal_mirrored = ExtResource("4_g4jv7")
+OptionButton/styles/pressed = ExtResource("4_g4jv7")
+OptionButton/styles/pressed_mirrored = ExtResource("4_g4jv7")
+Panel/styles/panel = ExtResource("4_g4jv7")
+TextEdit/styles/focus = ExtResource("4_g4jv7")
+TextEdit/styles/normal = ExtResource("4_g4jv7")
+TextEdit/styles/read_only = ExtResource("4_g4jv7")
