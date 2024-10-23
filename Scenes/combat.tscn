@@ -277,20 +277,28 @@ script = ExtResource("8_dvme0")
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Text_Stats Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.407
-anchor_bottom = 1.0
-offset_right = -0.0499992
+anchor_top = 0.162
+anchor_right = 0.413
+anchor_bottom = 0.757
+offset_left = 1.0
+offset_top = 0.0120258
+offset_right = 0.0500221
+offset_bottom = -0.0179939
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="HP" type="Label" parent="UI/Text_Stats Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 12
 text = "HP: 25"
 horizontal_alignment = 1
 
 [node name="AP" type="Label" parent="UI/Text_Stats Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 12
 text = "AP: 10"
 horizontal_alignment = 1
 
