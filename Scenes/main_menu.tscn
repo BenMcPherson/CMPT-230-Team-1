@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://cihywklhjbwqs"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_wcbli"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_wcbli")
+
+[node name="Menu_UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 1161.0
+offset_bottom = 650.0
+
+[node name="Title" type="RichTextLabel" parent="Menu_UI"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 7.0
+offset_right = 872.0
+offset_bottom = 231.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Redneck Redemption
+Battle for The Minifigure"
+
+[node name="Play_Button" type="Button" parent="Menu_UI"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 228.0
+offset_right = 387.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Combat_Button" type="Button" parent="Menu_UI"]
+offset_left = 744.0
+offset_top = 229.0
+offset_right = 1011.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 40
+text = "Combat"
+
+[node name="Settings_Button" type="Button" parent="Menu_UI"]
+offset_left = 120.0
+offset_top = 456.0
+offset_right = 387.0
+offset_bottom = 553.0
+theme_override_font_sizes/font_size = 40
+text = "Settings
+"
+
+[node name="Exit_Button" type="Button" parent="Menu_UI"]
+offset_left = 744.0
+offset_top = 458.0
+offset_right = 1011.0
+offset_bottom = 555.0
+theme_override_font_sizes/font_size = 40
+text = "Exit
+"
+
+[connection signal="pressed" from="Menu_UI/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Menu_UI/Combat_Button" to="." method="_on_combat_button_pressed"]
+[connection signal="pressed" from="Menu_UI/Exit_Button" to="." method="_on_exit_button_pressed"]

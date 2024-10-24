@@ -49,3 +49,9 @@ func player_animation(dir_x, dir_y):
 		animated_sprite_2d.play("Idle")
 	else:
 		animated_sprite_2d.play("Running")
+		
+# Easy Debug Escape
+func _input(ev):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().quit()
+
