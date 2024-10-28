@@ -9,7 +9,7 @@ extends Node
 
 func _on_play_button_pressed():
 	# Open player.tscn
-	get_tree().change_scene_to_file("res://Scenes/player.tscn")
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	
 
 func _on_combat_button_pressed():
