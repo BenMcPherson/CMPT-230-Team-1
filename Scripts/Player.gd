@@ -54,4 +54,3 @@ func player_animation(dir_x, dir_y):
 func _input(_ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
-

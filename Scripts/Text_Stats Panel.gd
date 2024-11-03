@@ -10,3 +10,4 @@ func _on_player_states_hp_changed(value):
 
 func _on_player_states_ap_changed(value):
 	ap_label.text = "AP: "+str(value)
+	

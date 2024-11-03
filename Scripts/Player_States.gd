@@ -7,8 +7,8 @@ var hp = max_hp: set = set_hp
 var _attack = 4
 var _defence = 1
 
-var _exp = 0
-var _max_exp = 10
+#var _exp = 0
+#var _max_exp = 10
 
 var max_ap = 10
 var ap = max_ap: set = set_ap
