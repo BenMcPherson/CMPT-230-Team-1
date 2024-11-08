@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=44 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -6,8 +6,13 @@
 [ext_resource type="Script" path="res://Scripts/Player_States.gd" id="2_paqux"]
 [ext_resource type="PackedScene" uid="uid://c4nvwjvlgbj5v" path="res://Scenes/enemy.tscn" id="3_sp0yw"]
 [ext_resource type="Texture2D" uid="uid://7hnj0lrasmoe" path="res://Assets/Player/Player Punch game 64x64.png" id="3_tl8ij"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="6_nwsc2"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="6_nwsc2"]
 [ext_resource type="Script" path="res://Scripts/Text_Stats Panel.gd" id="8_dvme0"]
+[ext_resource type="AudioStream" uid="uid://cpcyxtx311yio" path="res://Assets/SFX/Death.wav" id="9_hp43e"]
+[ext_resource type="AudioStream" uid="uid://qhho5gkpdbw2" path="res://Assets/SFX/Punch.wav" id="9_vx8g7"]
+[ext_resource type="AudioStream" uid="uid://twuhcxbhsuq1" path="res://Assets/SFX/Slash.wav" id="10_2gsuv"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="12_oiokm"]
+[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="13_feoon"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fntxe"]
 atlas = ExtResource("1_lylv1")
@@ -244,6 +249,13 @@ autoplay = "Idle"
 position = Vector2(630, 317)
 script = ExtResource("6_nwsc2")
 
+[node name="SlashSFX" type="AudioStreamPlayer2D" parent="Enemy"]
+position = Vector2(-630, -317)
+stream = ExtResource("10_2gsuv")
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("9_hp43e")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -257,8 +269,10 @@ anchor_left = 10.725
 anchor_top = 8.325
 anchor_right = 18.175
 anchor_bottom = 10.175
-offset_top = -3.05176e-05
-offset_right = -6.10352e-05
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 2.99994
+offset_bottom = -1.99997
 theme_override_styles/panel = SubResource("StyleBoxFlat_u3vnp")
 
 [node name="Text_Stats Panel" type="Panel" parent="UI"]
@@ -333,6 +347,29 @@ text = "End Turn"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 zoom = Vector2(4, 4)
+
+[node name="CombatSFX" type="Node2D" parent="."]
+
+[node name="PunchSFX" type="AudioStreamPlayer2D" parent="CombatSFX"]
+stream = ExtResource("9_vx8g7")
+
+[node name="ClickedSFX" type="AudioStreamPlayer2D" parent="CombatSFX"]
+stream = ExtResource("12_oiokm")
+pitch_scale = 2.25
+
+[node name="Neighbourhood" type="Sprite2D" parent="."]
+visibility_layer = 161
+z_index = -1
+position = Vector2(583, 255)
+scale = Vector2(0.951823, 1)
+texture = ExtResource("13_feoon")
+
+[node name="Message" type="Label" parent="."]
+offset_left = 449.0
+offset_top = 384.0
+offset_right = 556.0
+offset_bottom = 400.0
+text = "Messages Down Here"
 
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
 [connection signal="hp_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_hp_changed"]

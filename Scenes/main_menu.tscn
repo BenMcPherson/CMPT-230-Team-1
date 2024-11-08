@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cihywklhjbwqs"]
+[gd_scene load_steps=4 format=3 uid="uid://cihywklhjbwqs"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_wcbli"]
+[ext_resource type="Script" path="res://Scripts/MainMenuMoving.gd" id="2_aue0f"]
+[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_yhdvm"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_wcbli")
@@ -32,6 +34,7 @@ theme_override_font_sizes/font_size = 40
 text = "Play"
 
 [node name="Combat_Button" type="Button" parent="Menu_UI"]
+layout_mode = 0
 offset_left = 744.0
 offset_top = 229.0
 offset_right = 1011.0
@@ -40,6 +43,7 @@ theme_override_font_sizes/font_size = 40
 text = "Combat"
 
 [node name="Settings_Button" type="Button" parent="Menu_UI"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 456.0
 offset_right = 387.0
@@ -49,6 +53,7 @@ text = "Settings
 "
 
 [node name="Exit_Button" type="Button" parent="Menu_UI"]
+layout_mode = 0
 offset_left = 744.0
 offset_top = 458.0
 offset_right = 1011.0
@@ -56,6 +61,18 @@ offset_bottom = 555.0
 theme_override_font_sizes/font_size = 40
 text = "Exit
 "
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_aue0f")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Neighbourhood" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1448, 324)
+scale = Vector2(3.76371, 3.76371)
+texture = ExtResource("2_yhdvm")
 
 [connection signal="pressed" from="Menu_UI/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Menu_UI/Combat_Button" to="." method="_on_combat_button_pressed"]

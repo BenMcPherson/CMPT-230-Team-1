@@ -14,8 +14,8 @@ func _on_play_button_pressed():
 
 func _on_combat_button_pressed():
 	# Open combat.tscn
-	get_tree().change_scene_to_file("res://Scenes/combat.tscn")
-	
+	var a = get_tree().change_scene_to_file("res://Scenes/loading.tscn")
+
 
 
 func _on_exit_button_pressed():
