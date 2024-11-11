@@ -9,12 +9,12 @@ extends Node
 
 func _on_play_button_pressed():
 	# Open player.tscn
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadGame.tscn")
 	
 
 func _on_combat_button_pressed():
 	# Open combat.tscn
-	var a = get_tree().change_scene_to_file("res://Scenes/loading.tscn")
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadCombat.tscn")
 
 
 

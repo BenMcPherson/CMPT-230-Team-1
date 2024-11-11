@@ -4,6 +4,7 @@ extends CharacterBody2D
 var speed = 5000
 var input = Vector2.ZERO
 
+
 #The player main function
 func _physics_process(delta):
 	player_movement(delta)
@@ -50,7 +51,3 @@ func player_animation(dir_x, dir_y):
 	else:
 		animated_sprite_2d.play("Running")
 		
-# Easy Debug Escape
-func _input(_ev):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().quit()
