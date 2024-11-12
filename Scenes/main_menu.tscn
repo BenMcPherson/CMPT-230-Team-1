@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cihywklhjbwqs"]
+[gd_scene load_steps=5 format=3 uid="uid://cihywklhjbwqs"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_wcbli"]
 [ext_resource type="Script" path="res://Scripts/MainMenuMoving.gd" id="2_aue0f"]
 [ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_yhdvm"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="4_48n2p"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_wcbli")
@@ -74,6 +75,13 @@ position = Vector2(1448, 324)
 scale = Vector2(3.76371, 3.76371)
 texture = ExtResource("2_yhdvm")
 
+[node name="MenuSFX" type="Node2D" parent="."]
+
+[node name="ClickedSFX" type="AudioStreamPlayer2D" parent="MenuSFX"]
+stream = ExtResource("4_48n2p")
+pitch_scale = 2.25
+
 [connection signal="pressed" from="Menu_UI/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Menu_UI/Combat_Button" to="." method="_on_combat_button_pressed"]
+[connection signal="pressed" from="Menu_UI/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Menu_UI/Exit_Button" to="." method="_on_exit_button_pressed"]
