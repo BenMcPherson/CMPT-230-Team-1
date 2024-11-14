@@ -316,7 +316,7 @@ theme_override_font_sizes/font_size = 12
 text = "AP: 10"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="UI"]
+[node name="BattleActionButtons" type="GridContainer" parent="UI"]
 layout_mode = 0
 offset_left = 455.0
 offset_top = 340.0
@@ -324,22 +324,22 @@ offset_right = 542.0
 offset_bottom = 400.0
 columns = 2
 
-[node name="Attack_Button" type="Button" parent="UI/GridContainer"]
+[node name="Attack_Button" type="Button" parent="UI/BattleActionButtons"]
 custom_minimum_size = Vector2(29, 13)
 layout_mode = 2
 text = "Attack"
 
-[node name="Item_Button" type="Button" parent="UI/GridContainer"]
+[node name="Item_Button" type="Button" parent="UI/BattleActionButtons"]
 custom_minimum_size = Vector2(29, 13)
 layout_mode = 2
 text = "Item"
 
-[node name="Companion_Button" type="Button" parent="UI/GridContainer"]
+[node name="Companion_Button" type="Button" parent="UI/BattleActionButtons"]
 custom_minimum_size = Vector2(29, 13)
 layout_mode = 2
 text = "Companion"
 
-[node name="EndTurn_Button" type="Button" parent="UI/GridContainer"]
+[node name="EndTurn_Button" type="Button" parent="UI/BattleActionButtons"]
 custom_minimum_size = Vector2(29, 13)
 layout_mode = 2
 text = "End Turn"
@@ -373,4 +373,5 @@ text = "Messages Down Here"
 
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
 [connection signal="hp_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_hp_changed"]
-[connection signal="pressed" from="UI/GridContainer/Attack_Button" to="." method="_on_attack_button_pressed"]
+[connection signal="died" from="Enemy" to="." method="_on_enemy_died"]
+[connection signal="pressed" from="UI/BattleActionButtons/Attack_Button" to="." method="_on_attack_button_pressed"]

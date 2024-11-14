@@ -1,44 +1,41 @@
 extends Node
 
-# Player Stats
+## Player Stats
+
+#Health
 var max_hp = 25
 var hp = max_hp: set = set_hp
 
-var _attack = 4
-var _defence = 1
-
-#var _exp = 0
-#var _max_exp = 10
-
+#Action Points
 var max_ap = 10
 var ap = max_ap: set = set_ap
 
+#Attack
+var init_atk = 1
+var atk = init_atk: set = set_atk
+
+#Defense
+var init_def = 1
+var def = init_def: set = set_def
+
+#Set up signals
 signal hp_changed(value)
 signal ap_changed(value)
 signal end_turn
 
+## Set/Get functions
 func set_hp(value):
-	hp = min(value, max_hp)
+	hp = clamp(value, 0, max_hp)
 	emit_signal("hp_changed", hp)
 	
 func set_ap(value):
-	ap = min(value, max_ap)
+	ap = clamp(value, 0, max_ap)
 	emit_signal("ap_changed", ap)
+	if ap == 0:
+		emit_signal("end_turn")
+
+func set_atk(value):
+	atk = value
 	
-func get_attack():
-	# Get The Player Attack
-	return _attack
-
-func set_attack(value):
-	# Set the Value of Player Attack to New Number
-	_attack = value
-		
-func get_defence():
-	# Get the Player Defence
-	return _defence
-
-func set_defence(value):
-	# Set the Value of Player Defence to New Number
-	_defence = value	
-	
-
+func set_def(value):
+	def = value

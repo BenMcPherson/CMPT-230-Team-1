@@ -1,35 +1,51 @@
 extends Node
 
+# Get instance from game
 @onready var enemy = $Enemy
-@onready var attack_button = $UI/GridContainer/Attack_Button
+@onready var battle_action_buttons = $UI/BattleActionButtons
 @onready var player_animations = $Player/Player_Animations
 @onready var player_states = $Player_States
 @onready var message_state = $Message
 
 func _ready():
 	message_state.hide()
-	
+	start_player_turn()
+
+
+func start_enemy_turn():
+	battle_action_buttons.hide() #Hide combat buttons
+	if enemy != null: #Check if enemy exists
+		enemy.attack(player_states) #Run attack function
+		await(enemy.end_turn)
+	start_player_turn()
+
+
+func start_player_turn():
+	battle_action_buttons.show() #Show combat buttons
+	player_states.ap = player_states.max_ap #Reset Action points
+	await(player_states.end_turn) #Wait until action point equal zero
+	start_enemy_turn()
+
+
+#Attack function
 func _on_attack_button_pressed():
-	$CombatSFX/ClickedSFX.play()
-	if enemy != null:
-		if player_states.ap != 0:
-			player_states.ap -= 1
-			player_animations.play("Punch")
-			await (player_animations.animation_finished)
-			$CombatSFX/PunchSFX.play()
-			enemy.hp -= 1 #player_states.get_attack()
-			player_animations.play("Idle")
-		else:
-			message_state.text = "No Action Points Available..."
-			message_state.show()
-			await get_tree().create_timer(1).timeout
-			message_state.hide()
-	
-func _on_test_enemy_died():
-	attack_button.hide()
+	$CombatSFX/ClickedSFX.play() #Play sound effect
+	if enemy != null: #If enemy does exist
+		player_animations.play("Punch") #Play punch animation
+		await (player_animations.animation_finished)
+		$CombatSFX/PunchSFX.play() #Play sound effect
+		enemy.take_damage(player_states.atk) #Run enemy damage function
+		player_states.ap -= 1 #Reduce action points
+		player_animations.play("Idle") #Resume Idle
+
+
+#When enemy dies
+func _on_enemy_died():
+	battle_action_buttons.hide()
 	enemy = null
 
 # Easy Debug Exit
 func _input(_ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
+
