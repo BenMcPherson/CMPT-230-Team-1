@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxwlkreltm78x"]
+
+[ext_resource type="PackedScene" uid="uid://ba4wa15yf0d21" path="res://Scenes/action_button.tscn" id="1_2t334"]
+[ext_resource type="Script" path="res://Scripts/power_up_button.gd" id="2_wi6ge"]
+
+[node name="Power_Up_Button" instance=ExtResource("1_2t334")]
+text = "Shark Power"
+script = ExtResource("2_wi6ge")

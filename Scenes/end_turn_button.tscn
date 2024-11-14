@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5rafxnnyc48"]
+
+[ext_resource type="PackedScene" uid="uid://ba4wa15yf0d21" path="res://Scenes/action_button.tscn" id="1_ha7cg"]
+[ext_resource type="Script" path="res://Scripts/end_turn_button.gd" id="2_af6jh"]
+
+[node name="End_Turn_Button" instance=ExtResource("1_ha7cg")]
+text = "End Turn"
+script = ExtResource("2_af6jh")

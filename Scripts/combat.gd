@@ -26,19 +26,6 @@ func start_player_turn():
 	await(player_states.end_turn) #Wait until action point equal zero
 	start_enemy_turn()
 
-
-#Attack function
-func _on_attack_button_pressed():
-	$CombatSFX/ClickedSFX.play() #Play sound effect
-	if enemy != null: #If enemy does exist
-		player_animations.play("Punch") #Play punch animation
-		await (player_animations.animation_finished)
-		$CombatSFX/PunchSFX.play() #Play sound effect
-		enemy.take_damage(player_states.atk) #Run enemy damage function
-		player_states.ap -= 1 #Reduce action points
-		player_animations.play("Idle") #Resume Idle
-
-
 #When enemy dies
 func _on_enemy_died():
 	battle_action_buttons.hide()

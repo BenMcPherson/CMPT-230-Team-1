@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcei1hx5bl47l"]
+
+[ext_resource type="PackedScene" uid="uid://ba4wa15yf0d21" path="res://Scenes/action_button.tscn" id="1_fkptf"]
+[ext_resource type="Script" path="res://Scripts/attack_action_button.gd" id="2_nues0"]
+[ext_resource type="AudioStream" uid="uid://qhho5gkpdbw2" path="res://Assets/SFX/Punch.wav" id="3_vreim"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="4_2itui"]
+
+[node name="Attack_Action_Button" instance=ExtResource("1_fkptf")]
+text = "Attack"
+script = ExtResource("2_nues0")
+
+[node name="CombatSFX" type="Node2D" parent="." index="0"]
+
+[node name="PunchSFX" type="AudioStreamPlayer2D" parent="CombatSFX" index="0"]
+stream = ExtResource("3_vreim")
+
+[node name="ClickedSFX" type="AudioStreamPlayer2D" parent="CombatSFX" index="1"]
+stream = ExtResource("4_2itui")
+pitch_scale = 2.25

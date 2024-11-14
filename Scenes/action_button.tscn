@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba4wa15yf0d21"]
+
+[ext_resource type="Script" path="res://Scripts/Action_Button.gd" id="1_vlnrw"]
+
+[node name="Action_Button" type="Button"]
+custom_minimum_size = Vector2(29, 13)
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.076
+offset_right = -15.448
+offset_bottom = -36.248
+script = ExtResource("1_vlnrw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

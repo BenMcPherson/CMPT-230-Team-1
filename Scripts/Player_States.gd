@@ -7,7 +7,7 @@ var max_hp = 25
 var hp = max_hp: set = set_hp
 
 #Action Points
-var max_ap = 10
+var max_ap = 5
 var ap = max_ap: set = set_ap
 
 #Attack
