@@ -1,0 +1,166 @@
+[gd_scene load_steps=3 format=3 uid="uid://iy7exdywgdij"]
+
+[ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_12hlw"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="2_xmqjt"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_12hlw")
+
+[node name="CreditsUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1161.0
+offset_bottom = 651.0
+
+[node name="CreditsTitle" type="Label" parent="CreditsUI"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 25.0
+offset_right = 616.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Team1" type="Label" parent="CreditsUI"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 117.0
+offset_right = 758.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1: The Only One"
+
+[node name="BackButton" type="Button" parent="CreditsUI"]
+layout_mode = 0
+offset_top = 603.0
+offset_right = 198.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 20
+text = "Back to Options"
+
+[node name="Names" type="Control" parent="CreditsUI"]
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 175.0
+offset_right = 501.0
+offset_bottom = 560.0
+
+[node name="Benjamin" type="Label" parent="CreditsUI/Names"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 25.0
+offset_right = 313.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 25
+text = "Benjamin McPherson"
+
+[node name="Kelsey" type="Label" parent="CreditsUI/Names"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 94.0
+offset_right = 277.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 25
+text = "Kelsey Pascual"
+
+[node name="Michael" type="Label" parent="CreditsUI/Names"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 168.0
+offset_right = 287.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 25
+text = "Michael Shkrobot"
+
+[node name="Ryan" type="Label" parent="CreditsUI/Names"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 237.0
+offset_right = 252.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 25
+text = "Ryan Bernal
+"
+
+[node name="Special Thanks" type="Label" parent="CreditsUI/Names"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 324.0
+offset_right = 358.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 25
+text = "Special Thanks To:"
+
+[node name="Roles" type="Control" parent="CreditsUI"]
+anchors_preset = 0
+offset_left = 565.0
+offset_top = 179.0
+offset_right = 1123.0
+offset_bottom = 562.0
+
+[node name="Benjamin_Roles" type="Label" parent="CreditsUI/Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 365.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 25
+text = "Combat Programmer
+Combat/UI Designer"
+
+[node name="Kelsey_Roles" type="Label" parent="CreditsUI/Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 91.0
+offset_right = 497.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 25
+text = "Project Manager/Story Writer
+Environment Programmer"
+
+[node name="Michael_Roles" type="Label" parent="CreditsUI/Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 165.0
+offset_right = 422.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 25
+text = "Character/Level Designer
+Story Writer"
+
+[node name="Ryan_Roles" type="Label" parent="CreditsUI/Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 231.0
+offset_right = 453.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 25
+text = "Music/SFX Designer
+UI Programmer"
+
+[node name="Dr and Class" type="Label" parent="CreditsUI/Roles"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 320.0
+offset_right = 545.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 25
+text = "Dr. Sam Qorbani
+The CMPT 230 Fall 2024 Class"
+
+[node name="Copyright" type="Label" parent="CreditsUI"]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 622.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 25
+text = "CMPT 230: Fall 2024"
+
+[node name="CreditsSFX" type="Node2D" parent="."]
+
+[node name="ClickSFX" type="AudioStreamPlayer2D" parent="CreditsSFX"]
+stream = ExtResource("2_xmqjt")
+pitch_scale = 2.25
+
+[connection signal="pressed" from="CreditsUI/BackButton" to="." method="_on_back_button_pressed"]

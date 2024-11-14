@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=3 format=3 uid="uid://cv6lwkajd0g37"]
 
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_7blcj")
 
 [node name="Player" parent="." instance=ExtResource("1_t1oyl")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+
+[node name="OptionsUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -144.0
+offset_top = -81.0
+offset_right = -68.0
+
+[node name="Exit_Button" type="Button" parent="OptionsUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+text = "Exit To Main Menu"
+
+[connection signal="pressed" from="OptionsUI/Exit_Button" to="." method="_on_exit_button_pressed"]

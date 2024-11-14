@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://dctsmnvsxfbsa"]
+
+[ext_resource type="Script" path="res://Scripts/Options.gd" id="1_eljbr"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="2_pf48s"]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_eljbr")
+
+[node name="OptionsUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1161.0
+offset_bottom = 651.0
+
+[node name="OptionsTitle" type="Label" parent="OptionsUI"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 10.0
+offset_right = 699.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="BackButton" type="Button" parent="OptionsUI"]
+layout_mode = 0
+offset_top = 591.0
+offset_right = 182.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 20
+text = "Back to Main Menu"
+
+[node name="CreditsButton" type="Button" parent="OptionsUI"]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 594.0
+offset_right = 1151.0
+offset_bottom = 643.0
+theme_override_font_sizes/font_size = 25
+text = "Credits"
+
+[node name="OptionDescriptions" type="Control" parent="OptionsUI"]
+anchors_preset = 0
+offset_left = 172.0
+offset_top = 102.0
+offset_right = 461.0
+offset_bottom = 520.0
+
+[node name="Volume" type="Label" parent="OptionsUI/OptionDescriptions"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 17.0
+offset_right = 230.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 30
+text = "Volume:
+"
+
+[node name="Aspect Ratio" type="Label" parent="OptionsUI/OptionDescriptions"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 93.0
+offset_right = 264.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 30
+text = "Aspect Ratio:
+"
+
+[node name="Controls" type="Label" parent="OptionsUI/OptionDescriptions"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 181.0
+offset_right = 265.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 30
+text = "Controls:"
+
+[node name="OptionsControlPanel" type="Control" parent="OptionsUI"]
+anchors_preset = 0
+offset_left = 705.0
+offset_top = 86.0
+offset_right = 1138.0
+offset_bottom = 558.0
+
+[node name="ControlsList" type="TextEdit" parent="OptionsUI/OptionsControlPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 197.0
+offset_right = 394.0
+offset_bottom = 484.0
+theme_override_colors/background_color = Color(0.301961, 0.301961, 0.301961, 1)
+theme_override_font_sizes/font_size = 30
+text = "WASD - Move
+ESC - Pause Game
+LMB - Interact
+"
+
+[node name="HSlider" type="HSlider" parent="OptionsUI/OptionsControlPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 319.0
+offset_bottom = 72.0
+
+[node name="MenuButton" type="MenuButton" parent="OptionsUI/OptionsControlPanel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 105.0
+offset_right = 277.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 30
+text = "Default"
+
+[node name="OptionsSFX" type="Node2D" parent="."]
+
+[node name="ClickSFX" type="AudioStreamPlayer2D" parent="OptionsSFX"]
+stream = ExtResource("2_pf48s")
+pitch_scale = 2.25
+
+[connection signal="pressed" from="OptionsUI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionsUI/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -6,18 +6,29 @@ extends Node
 @onready var settings_button = $Menu_UI/Settings_Button
 @onready var exit_button = $Menu_UI/Exit_Button
 
+# Sound Effects
+@onready var click = $MenuSFX/ClickedSFX
 
 func _on_play_button_pressed():
 	# Open player.tscn
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	click.play()
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadGame.tscn")
 	
-
 func _on_combat_button_pressed():
 	# Open combat.tscn
-	var a = get_tree().change_scene_to_file("res://Scenes/loading.tscn")
-
-
+	click.play()
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadCombat.tscn")
 
 func _on_exit_button_pressed():
 	# Exit and close game
+	click.play()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().quit()
+
+func _on_settings_button_pressed():
+	# Open the settings for the game
+	click.play()
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file("res://Scenes/options.tscn")
