@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=59 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Player_States.gd" id="2_paqux"]
 [ext_resource type="PackedScene" uid="uid://c4nvwjvlgbj5v" path="res://Scenes/enemy.tscn" id="3_sp0yw"]
 [ext_resource type="Texture2D" uid="uid://7hnj0lrasmoe" path="res://Assets/Player/Player Punch game 64x64.png" id="3_tl8ij"]
+[ext_resource type="Texture2D" uid="uid://cm5gjks44c01a" path="res://Assets/Player/Player shark Idle game 48x48.png" id="6_k7n8u"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="6_nwsc2"]
 [ext_resource type="Script" path="res://Scripts/Text_Stats Panel.gd" id="8_dvme0"]
 [ext_resource type="AudioStream" uid="uid://cpcyxtx311yio" path="res://Assets/SFX/Death.wav" id="9_hp43e"]
@@ -130,6 +131,46 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("3_tl8ij")
 region = Rect2(448, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rghbm"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj7is"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_splll"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndrf3"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmwfk"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twr3d"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq1u5"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfd6p"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udxy1"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgwqp"]
+atlas = ExtResource("6_k7n8u")
+region = Rect2(432, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bb7bs"]
 animations = [{
 "frames": [{
@@ -230,6 +271,41 @@ animations = [{
 "loop": false,
 "name": &"Punch",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rghbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj7is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_splll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndrf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmwfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twr3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq1u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfd6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udxy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgwqp")
+}],
+"loop": true,
+"name": &"SharkIdle",
+"speed": 8.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3vnp"]
@@ -246,8 +322,9 @@ position = Vector2(531, 317)
 
 [node name="Player_Animations" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_bb7bs")
-animation = &"Punch"
+animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.561905
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
 position = Vector2(630, 317)

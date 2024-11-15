@@ -13,5 +13,5 @@ func _on_pressed():
 		$CombatSFX/PunchSFX.play()
 		enemy.take_damage(player_states.atk)
 		player_states.ap -= 1
-		player_animations.play("Idle") #Resume Idle
+		player_animations.play(player_states.idle) #Resume Idle
 

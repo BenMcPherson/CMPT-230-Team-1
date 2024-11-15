@@ -18,6 +18,9 @@ var atk = init_atk: set = set_atk
 var init_def = 1
 var def = init_def: set = set_def
 
+#Player animation key
+var idle = "Idle"
+
 #Set up signals
 signal hp_changed(value)
 signal ap_changed(value)
