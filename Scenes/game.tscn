@@ -1,15 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=10 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
+[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_hs5dk"]
+[ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="3_5crmt"]
+[ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="5_5q08a"]
 
-[node name="Game" type="Node"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlyn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ibc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pba6"]
+
+[node name="game" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_7blcj")
 
-[node name="Player" parent="." instance=ExtResource("1_t1oyl")]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(272.667, -46)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
+[node name="Neighbourhood" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(112.417, 131.667)
+scale = Vector2(1.0026, 1)
+texture = ExtResource("2_hs5dk")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-176, 169.333)
+polygon = PackedVector2Array(-106.417, 2.99965, -106.417, 49.6663, -129.084, 47.6663, -129.751, 0.999649)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-167.583, 175.667)
+polygon = PackedVector2Array(55.5827, 10.9996, 2.91599, 10.333, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 12.9996, -57.084, 12.9996, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 697.583, 19.6667, 664.916, 9.66632, 504.916, 10.333, 496.916, -1.66702, 496.916, -31.667, 475.583, -31.667, 475.583, 1.66632, 481.583, 11.6663, 294.916, 12.333, 292.249, 3.66632, 291.583, -31.667, 268.916, -31.667, 268.916, 3.66632, 266.916, 10.9996, 80.2493, 10.9996, 83.5827, -1.66702, 82.916, -31.0004, 64.2493, -31.0004, 64.2493, -1.00035, 60.916, 2.99965)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-167.583, 175.667)
+polygon = PackedVector2Array(-133.5, 35.75, 675.5, 36.75, 675.5, 78, -136, 69.75)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-272, 46)
+polygon = PackedVector2Array(802.667, 174, 769.333, 174.667, 770, 123.333, 817.333, 124, 818, 170.667)
 
 [node name="OptionsUI" type="Control" parent="."]
 layout_mode = 3
@@ -23,5 +54,59 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 18.0
 text = "Exit To Main Menu"
+
+[node name="Player" parent="." instance=ExtResource("1_t1oyl")]
+position = Vector2(70, 142)
+collision_layer = 3
+
+[node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
+zoom = Vector2(2.55, 2.55)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 253
+script = ExtResource("5_5q08a")
+follow_node = NodePath("../Player")
+
+[node name="beach_trigger" parent="." instance=ExtResource("3_5crmt")]
+position = Vector2(11.3333, 149.333)
+connected_scene = "beach"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beach_trigger"]
+shape = SubResource("RectangleShape2D_b3723")
+
+[node name="milkman_house_trigger" parent="." instance=ExtResource("3_5crmt")]
+position = Vector2(178.667, 114.667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="milkman_house_trigger"]
+shape = SubResource("RectangleShape2D_nlyn4")
+
+[node name="neighbour_house_trigger" parent="." instance=ExtResource("3_5crmt")]
+position = Vector2(591.333, 114)
+connected_scene = "neighbour_house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="neighbour_house_trigger"]
+shape = SubResource("RectangleShape2D_80ibc")
+
+[node name="player_house_trigger" parent="." instance=ExtResource("3_5crmt")]
+position = Vector2(385.333, 114)
+connected_scene = "player_house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_house_trigger"]
+shape = SubResource("RectangleShape2D_5pba6")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(70, 142)
+
+[node name="beach" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-34, 9.33333)
+
+[node name="milkman_house" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="player_house" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(525.333, -6.66666)
+
+[node name="neighbour_house" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(525.333, -6.66667)
 
 [connection signal="pressed" from="OptionsUI/Exit_Button" to="." method="_on_exit_button_pressed"]
