@@ -1,5 +1,7 @@
 extends Node
 
+const Battle_Units = preload("res://Resources/Battle_Units.tres")
+
 ## Player Stats
 
 #Health
@@ -42,3 +44,9 @@ func set_atk(value):
 	
 func set_def(value):
 	def = value
+
+func _ready():
+	Battle_Units.PlayerState = self
+	
+func _exit_tree():
+	Battle_Units.PlayerState = null

@@ -2,8 +2,8 @@ extends "res://Scripts/Action_Button.gd"
 
 func _on_pressed():
 	var main = get_tree().current_scene
-	var enemy = main.find_child("Enemy")
-	var player_states = main.find_child("Player_States")
+	var enemy = Battle_Units.Enemy
+	var player_states = Battle_Units.PlayerState
 	var player_animations = main.find_child("Player_Animations")
 	
 	$CombatSFX/ClickedSFX.play()

@@ -3,7 +3,7 @@ extends "res://Scripts/Action_Button.gd"
 
 func _on_pressed():
 	var main = get_tree().current_scene
-	var player_states = main.find_child("Player_States")
+	var player_states = Battle_Units.PlayerState
 	var player_animations = main.find_child("Player_Animations")
 	
 	if player_states != null:

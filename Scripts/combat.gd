@@ -1,10 +1,10 @@
 extends Node
 
+const Battle_Units = preload("res://Resources/Battle_Units.tres")
+
 # Get instance from game
-@onready var enemy = $Enemy
 @onready var battle_action_buttons = $UI/BattleActionButtons
 @onready var player_animations = $Player/Player_Animations
-@onready var player_states = $Player_States
 @onready var message_state = $Message
 
 func _ready():
@@ -14,14 +14,16 @@ func _ready():
 
 func start_enemy_turn():
 	battle_action_buttons.hide() #Hide combat buttons
+	var enemy = Battle_Units.Enemy
 	if enemy != null: #Check if enemy exists
-		enemy.attack(player_states) #Run attack function
+		enemy.attack() #Run attack function
 		await(enemy.end_turn)
 	start_player_turn()
 
 
 func start_player_turn():
 	battle_action_buttons.show() #Show combat buttons
+	var player_states = Battle_Units.PlayerState
 	player_states.ap = player_states.max_ap #Reset Action points
 	await(player_states.end_turn) #Wait until action point equal zero
 	start_enemy_turn()
@@ -29,7 +31,6 @@ func start_player_turn():
 #When enemy dies
 func _on_enemy_died():
 	battle_action_buttons.hide()
-	enemy = null
 
 # Easy Debug Exit
 func _input(_ev):

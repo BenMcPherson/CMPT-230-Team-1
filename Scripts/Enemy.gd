@@ -1,5 +1,7 @@
 extends Node2D
 
+const Battle_Units = preload("res://Resources/Battle_Units.tres")
+
 var hp = 25: set = set_hp
 
 #get instance
@@ -12,13 +14,19 @@ signal end_turn
 func set_hp(new_hp):
 	hp = new_hp
 	hp_label.text = str(hp) + 'HP'
-	
-func attack(target) -> void:
+
+func _ready():
+	Battle_Units.Enemy = self
+
+func _exit_tree():
+	Battle_Units.Enemy = null
+
+func attack() -> void:
 	await(get_tree().create_timer(0.4).timeout)
 	animated_sprite_2d.play("Attack")
 	$SlashSFX.play()
 	await(animated_sprite_2d.animation_finished)
-	target.hp -= 3
+	Battle_Units.PlayerState.hp -= 4
 	animated_sprite_2d.play("Idle")
 	emit_signal("end_turn")
 

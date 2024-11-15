@@ -324,7 +324,7 @@ position = Vector2(531, 317)
 sprite_frames = SubResource("SpriteFrames_bb7bs")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.561905
+frame_progress = 0.236427
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
 position = Vector2(630, 317)
