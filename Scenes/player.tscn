@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="2_6acn7"]
 [ext_resource type="Texture2D" uid="uid://bunnd5yipudfa" path="res://Assets/Player/Player_run_game_48x48.png" id="3_w71sp"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5u7bv"]
+radius = 7.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3mvf"]
 atlas = ExtResource("2_6acn7")
 region = Rect2(0, 0, 48, 48)
@@ -143,20 +146,16 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5u7bv"]
-radius = 7.0
-
-[node name="Player" type="Node2D"]
-
-[node name="Player Physics Body" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
+light_mask = 3
 script = ExtResource("1_wcnls")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player Physics Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_5u7bv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpy1r")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.214857
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Physics Body"]
-position = Vector2(0, 11)
-shape = SubResource("CircleShape2D_5u7bv")

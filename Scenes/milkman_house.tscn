@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://clamtp83ttovq"]
+
+[ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_kluif"]
+[ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="2_7g8kf"]
+[ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="3_5qg10"]
+
+[node name="milkman_house" type="Node2D"]
+scale = Vector2(4.05, 4.05)
+script = ExtResource("1_kluif")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(52.75, 147)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("2_7g8kf")]
+position = Vector2(19.75, 145)
+connected_scene = "game"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SceneTrigger"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-21.4784, 15)
+polygon = PackedVector2Array(2, -0.5, 38.25, -0.5, 38.25, -36.5, 2, -36.5)
+
+[node name="Player" parent="." instance=ExtResource("3_5qg10")]
+position = Vector2(52.3457, 141.975)

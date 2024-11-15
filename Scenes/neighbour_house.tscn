@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv4dpu6a1bhws"]
+
+[ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_x8g24"]
+[ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="2_jk5pw"]
+[ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="3_3lxpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fg6q"]
+
+[node name="neighbour_house" type="Node2D"]
+scale = Vector2(4.05, 4.05)
+script = ExtResource("1_x8g24")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(36.5432, 146.42)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("2_jk5pw")]
+position = Vector2(12.0988, 148.148)
+connected_scene = "game"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(0.740741, 1.43051e-05)
+shape = SubResource("RectangleShape2D_5fg6q")
+
+[node name="Player" parent="." instance=ExtResource("3_3lxpy")]
