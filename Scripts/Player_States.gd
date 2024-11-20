@@ -10,7 +10,7 @@ var max_hp = 20
 var hp = max_hp: set = set_hp
 
 #Action Points
-var max_ap = 5
+var max_ap = 1
 var ap = max_ap: set = set_ap
 
 #Attack
@@ -27,9 +27,9 @@ var temp_def = init_temp_def: set  = set_temp_def
 #Player animation key
 var idle = "Idle"
 var attack = 'Punch'
-var hurt = ''
+var hurt = 'Hurt'
 var death = 'Death'
-var transform = ''
+var transform = 'Null'
 
 #Set up signals
 signal hp_changed(value)
@@ -63,7 +63,12 @@ func _exit_tree():
 	Battle_Units.PlayerState = null
 
 func take_damage(amount):
-	self.hp -= amount
+	if temp_def > def:
+		self.hp -= amount/temp_def
+		self.temp_def = init_temp_def
+	else:
+		self.hp -= amount/def
+		
 	if is_dead(): #Player lose/death
 		$DeathSFX.play()
 		player_animations.play("Death")

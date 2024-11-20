@@ -5,4 +5,5 @@ func _on_pressed():
 	var player_states = Battle_Units.PlayerState
 	
 	if player_states != null:
+		player_states.temp_def += 3
 		player_states.ap -= player_states.ap

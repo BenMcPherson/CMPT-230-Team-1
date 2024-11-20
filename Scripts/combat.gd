@@ -35,6 +35,7 @@ func start_player_turn():
 #When enemy dies
 func _on_enemy_died(): #Win function
 	battle_action_buttons.hide()
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/MainMenu.tscn")
 
 # Easy Debug Exit
 func _input(_ev):
