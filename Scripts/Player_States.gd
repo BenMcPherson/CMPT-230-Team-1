@@ -1,11 +1,12 @@
 extends Node
 
 const Battle_Units = preload("res://Resources/Battle_Units.tres")
+@onready var player_animations = $"../Player/Player_Animations"
 
 ## Player Stats
 
 #Health
-var max_hp = 25
+var max_hp = 20
 var hp = max_hp: set = set_hp
 
 #Action Points
@@ -13,15 +14,22 @@ var max_ap = 5
 var ap = max_ap: set = set_ap
 
 #Attack
-var init_atk = 1
+var init_atk = 2
 var atk = init_atk: set = set_atk
 
 #Defense
 var init_def = 1
 var def = init_def: set = set_def
 
+var init_temp_def = 1
+var temp_def = init_temp_def: set  = set_temp_def
+
 #Player animation key
 var idle = "Idle"
+var attack = 'Punch'
+var hurt = ''
+var death = 'Death'
+var transform = ''
 
 #Set up signals
 signal hp_changed(value)
@@ -45,8 +53,27 @@ func set_atk(value):
 func set_def(value):
 	def = value
 
+func set_temp_def(value):
+	def = value
+
 func _ready():
 	Battle_Units.PlayerState = self
 	
 func _exit_tree():
 	Battle_Units.PlayerState = null
+
+func take_damage(amount):
+	self.hp -= amount
+	if is_dead(): #Player lose/death
+		$DeathSFX.play()
+		player_animations.play("Death")
+		await (player_animations.animation_finished)
+		emit_signal("died")
+		queue_free()
+	else: #Player Hurt
+		player_animations.play("Hurt")
+		await (player_animations.animation_finished)
+		player_animations.play("Idle")
+		
+func is_dead():
+	return hp <= 0

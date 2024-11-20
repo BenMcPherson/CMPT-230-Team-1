@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=65 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Player_States.gd" id="2_paqux"]
 [ext_resource type="PackedScene" uid="uid://c4nvwjvlgbj5v" path="res://Scenes/enemy.tscn" id="3_sp0yw"]
 [ext_resource type="Texture2D" uid="uid://7hnj0lrasmoe" path="res://Assets/Player/Player Punch game 64x64.png" id="3_tl8ij"]
+[ext_resource type="Texture2D" uid="uid://4hhgxtpapj27" path="res://Assets/Player/Player Hurt game 48x48.png" id="4_lsl2q"]
 [ext_resource type="Texture2D" uid="uid://cm5gjks44c01a" path="res://Assets/Player/Player shark Idle game 48x48.png" id="6_k7n8u"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="6_nwsc2"]
 [ext_resource type="Script" path="res://Scripts/Text_Stats Panel.gd" id="8_dvme0"]
@@ -59,6 +60,22 @@ region = Rect2(384, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jlon"]
 atlas = ExtResource("1_lylv1")
 region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apie5"]
+atlas = ExtResource("4_lsl2q")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_837ax"]
+atlas = ExtResource("4_lsl2q")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyuyc"]
+atlas = ExtResource("4_lsl2q")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7uue"]
+atlas = ExtResource("4_lsl2q")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6vq0"]
 atlas = ExtResource("1_4lxwe")
@@ -211,6 +228,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_apie5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_837ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyuyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7uue")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_b6vq0")
 }, {
 "duration": 1.0,
@@ -323,9 +357,10 @@ position = Vector2(531, 317)
 
 [node name="Player_Animations" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_bb7bs")
-animation = &"Idle"
+animation = &"Hurt"
 autoplay = "Idle"
-frame_progress = 0.236427
+frame = 3
+frame_progress = 1.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
 position = Vector2(630, 317)
@@ -388,7 +423,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 12
-text = "HP: 25"
+text = "HP: 20"
 horizontal_alignment = 1
 
 [node name="AP" type="Label" parent="UI/Text_Stats Panel/VBoxContainer"]
