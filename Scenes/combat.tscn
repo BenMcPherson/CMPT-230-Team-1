@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=74 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -10,16 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://cm5gjks44c01a" path="res://Assets/Player/Player shark Idle game 48x48.png" id="6_k7n8u"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="6_nwsc2"]
 [ext_resource type="Script" path="res://Scripts/Text_Stats Panel.gd" id="8_dvme0"]
+[ext_resource type="Texture2D" uid="uid://qsk3huyx3cdj" path="res://Assets/Player/Player shark Punch game 64x64.png" id="8_xvmeb"]
 [ext_resource type="AudioStream" uid="uid://cpcyxtx311yio" path="res://Assets/SFX/Death.wav" id="9_hp43e"]
 [ext_resource type="AudioStream" uid="uid://twuhcxbhsuq1" path="res://Assets/SFX/Slash.wav" id="10_2gsuv"]
 [ext_resource type="PackedScene" uid="uid://dcei1hx5bl47l" path="res://Scenes/attack_action_button.tscn" id="11_6g8pf"]
 [ext_resource type="PackedScene" uid="uid://n17ulwesstpi" path="res://Scenes/item_button.tscn" id="12_5r8gu"]
-[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="13_feoon"]
 [ext_resource type="PackedScene" uid="uid://b2mesxsycigdy" path="res://Scenes/companion_button.tscn" id="13_p6t3d"]
 [ext_resource type="PackedScene" uid="uid://be5rafxnnyc48" path="res://Scenes/end_turn_button.tscn" id="14_eqq2w"]
 [ext_resource type="PackedScene" uid="uid://bxwlkreltm78x" path="res://Scenes/power_up_button.tscn" id="15_tsrye"]
 [ext_resource type="PackedScene" uid="uid://iw00trfft1wk" path="res://Scenes/return_button.tscn" id="16_eewbw"]
 [ext_resource type="AudioStream" uid="uid://c1m0i7qijbgu7" path="res://Assets/Music/Battle.mp3" id="19_1fmv4"]
+[ext_resource type="Texture2D" uid="uid://cu4ngo4rbtl2c" path="res://Assets/Backgrounds/boss_room.png" id="20_fbc7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fntxe"]
 atlas = ExtResource("1_lylv1")
@@ -189,6 +190,38 @@ region = Rect2(384, 0, 48, 48)
 atlas = ExtResource("6_k7n8u")
 region = Rect2(432, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr5gg"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sio5"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fafij"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2g0s"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r6dn"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrxea"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frfve"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioqxw"]
+atlas = ExtResource("8_xvmeb")
+region = Rect2(448, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bb7bs"]
 animations = [{
 "frames": [{
@@ -341,6 +374,35 @@ animations = [{
 "loop": true,
 "name": &"SharkIdle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr5gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sio5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fafij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2g0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r6dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrxea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frfve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioqxw")
+}],
+"loop": false,
+"name": &"SharkPunch",
+"speed": 8.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3vnp"]
@@ -353,17 +415,19 @@ script = ExtResource("1_3ic73")
 script = ExtResource("2_paqux")
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(531, 317)
+z_index = 1
+position = Vector2(530, 317)
 
 [node name="Player_Animations" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_bb7bs")
-animation = &"Hurt"
+animation = &"SharkPunch"
 autoplay = "Idle"
-frame = 3
+frame = 7
 frame_progress = 1.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
-position = Vector2(630, 317)
+z_index = 1
+position = Vector2(617, 315)
 script = ExtResource("6_nwsc2")
 
 [node name="SlashSFX" type="AudioStreamPlayer2D" parent="Enemy"]
@@ -380,27 +444,29 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="BackgroundPanel" type="Panel" parent="UI"]
+z_index = -1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 10.725
+anchor_left = 10.8
 anchor_top = 8.325
-anchor_right = 18.175
-anchor_bottom = 10.175
-offset_left = 3.0
-offset_top = -2.0
-offset_right = 2.99994
-offset_bottom = -1.99997
+anchor_right = 16.475
+anchor_bottom = 10.125
+offset_top = -3.05176e-05
+offset_right = 61.0
+offset_bottom = -3.05176e-05
 theme_override_styles/panel = SubResource("StyleBoxFlat_u3vnp")
 
 [node name="Text_Stats Panel" type="Panel" parent="UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 14.275
+anchor_left = 14.3
 anchor_top = 8.325
-anchor_right = 18.025
+anchor_right = 18.05
 anchor_bottom = 10.175
-offset_top = -3.05176e-05
+offset_left = -6.10352e-05
+offset_top = -1.00003
 offset_right = -6.10352e-05
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_dvme0")
@@ -435,10 +501,10 @@ horizontal_alignment = 1
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
 layout_mode = 0
-offset_left = 455.0
-offset_top = 340.0
-offset_right = 542.0
-offset_bottom = 400.0
+offset_left = 442.0
+offset_top = 338.0
+offset_right = 524.0
+offset_bottom = 399.0
 columns = 2
 
 [node name="Attack_Action_Button" parent="UI/BattleActionButtons" instance=ExtResource("11_6g8pf")]
@@ -467,21 +533,21 @@ zoom = Vector2(4, 4)
 
 [node name="Neighbourhood" type="Sprite2D" parent="."]
 visibility_layer = 161
-z_index = -1
-position = Vector2(583, 255)
-scale = Vector2(0.951823, 1)
-texture = ExtResource("13_feoon")
+position = Vector2(576, 289)
+scale = Vector2(1.71429, 0.932292)
+texture = ExtResource("20_fbc7f")
 
 [node name="Message" type="Label" parent="."]
-offset_left = 449.0
-offset_top = 384.0
-offset_right = 556.0
-offset_bottom = 400.0
+offset_left = 442.0
+offset_top = 374.0
+offset_right = 549.0
+offset_bottom = 390.0
 text = "Messages Down Here"
 
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_1fmv4")
 
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
+[connection signal="died" from="Player_States" to="." method="_on_player_states_died"]
 [connection signal="hp_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_hp_changed"]
 [connection signal="died" from="Enemy" to="." method="_on_enemy_died"]

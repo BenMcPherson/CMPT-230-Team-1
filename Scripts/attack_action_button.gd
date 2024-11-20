@@ -8,7 +8,7 @@ func _on_pressed():
 	
 	$CombatSFX/ClickedSFX.play()
 	if enemy != null and player_states != null:
-		player_animations.play("Punch") #Play punch animation
+		player_animations.play(player_states.attack) #Play punch animation
 		await (player_animations.animation_finished)
 		$CombatSFX/PunchSFX.play()
 		enemy.take_damage(player_states.atk)

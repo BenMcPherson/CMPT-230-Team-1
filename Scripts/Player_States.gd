@@ -35,6 +35,7 @@ var transform = 'Null'
 signal hp_changed(value)
 signal ap_changed(value)
 signal end_turn
+signal died
 
 ## Set/Get functions
 func set_hp(value):
@@ -70,11 +71,9 @@ func take_damage(amount):
 		self.hp -= amount/def
 		
 	if is_dead(): #Player lose/death
-		$DeathSFX.play()
 		player_animations.play("Death")
 		await (player_animations.animation_finished)
 		emit_signal("died")
-		queue_free()
 	else: #Player Hurt
 		player_animations.play("Hurt")
 		await (player_animations.animation_finished)

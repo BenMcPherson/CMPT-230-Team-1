@@ -12,7 +12,7 @@ func _on_pressed():
 			player_states.def += 1
 			#Player become shark
 			player_states.idle = "SharkIdle"
-			player_states.attack = 'Punch'
+			player_states.attack = 'SharkPunch'
 			player_states.hurt = 'Hurt'
 			player_states.death = 'Death'
 			player_states.transform = 'Shark'

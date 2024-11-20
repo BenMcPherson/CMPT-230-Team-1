@@ -86,7 +86,7 @@ func transform() -> void:
 func bulk_def() -> void:
 	print("End Turn")
 	await(get_tree().create_timer(0.4).timeout)
-	self.def += 2
+	self.def += 1
 	emit_signal("end_turn")
 	
 func choose_move():
@@ -119,6 +119,7 @@ func take_damage(amount):
 		$DeathSFX.play()
 		animated_sprite_2d.play(death)
 		await (animated_sprite_2d.animation_finished)
+		print('Winner')
 		emit_signal("died")
 		queue_free()
 	else:
@@ -127,4 +128,4 @@ func take_damage(amount):
 		animated_sprite_2d.play(idle)
 		
 func is_dead():
-	return hp <= 0
+	return self.hp <= 0
