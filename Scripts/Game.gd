@@ -6,6 +6,9 @@ extends BaseScene
 
 var is_UI_open = false
 
+# Music
+@onready var overworld_music = $OverworldMusic
+
 func toggle_UI():
 	# If the UI is already open, close it
 	if is_UI_open:
@@ -21,6 +24,7 @@ func toggle_UI():
 func _ready():
 	super()
 	camera.follow_node = player
+	overworld_music.play()
 
 	
 func _input(_ev):

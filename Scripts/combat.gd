@@ -7,7 +7,11 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 @onready var player_animations = $Player/Player_Animations
 @onready var message_state = $Message
 
+# Music
+@onready var battle_music = $BattleMusic
+
 func _ready():
+	battle_music.play()
 	message_state.hide()
 	start_player_turn()
 
