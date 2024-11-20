@@ -9,6 +9,12 @@ extends Node
 # Sound Effects
 @onready var click = $MenuSFX/ClickedSFX
 
+# Music
+@onready var main_menu_music = $MenuSFX/MainMenuMusic
+
+func _ready():
+	main_menu_music.play()
+
 func _on_play_button_pressed():
 	# Open player.tscn
 	click.play()

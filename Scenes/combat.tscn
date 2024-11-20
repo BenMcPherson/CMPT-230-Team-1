@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=60 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://be5rafxnnyc48" path="res://Scenes/end_turn_button.tscn" id="14_eqq2w"]
 [ext_resource type="PackedScene" uid="uid://bxwlkreltm78x" path="res://Scenes/power_up_button.tscn" id="15_tsrye"]
 [ext_resource type="PackedScene" uid="uid://iw00trfft1wk" path="res://Scenes/return_button.tscn" id="16_eewbw"]
+[ext_resource type="AudioStream" uid="uid://c1m0i7qijbgu7" path="res://Assets/Music/Battle.mp3" id="19_1fmv4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fntxe"]
 atlas = ExtResource("1_lylv1")
@@ -442,6 +443,9 @@ offset_top = 384.0
 offset_right = 556.0
 offset_bottom = 400.0
 text = "Messages Down Here"
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_1fmv4")
 
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
 [connection signal="hp_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_hp_changed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=11 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
 [ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_hs5dk"]
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="3_5crmt"]
 [ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="5_5q08a"]
+[ext_resource type="AudioStream" uid="uid://bit0ksakkkkj1" path="res://Assets/Music/Overworld.mp3" id="6_bcp5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
 
@@ -45,9 +46,10 @@ polygon = PackedVector2Array(802.667, 174, 769.333, 174.667, 770, 123.333, 817.3
 [node name="OptionsUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -144.0
-offset_top = -81.0
-offset_right = -68.0
+offset_left = -160.0
+offset_top = -91.3333
+offset_right = -84.0
+offset_bottom = -10.3333
 
 [node name="Exit_Button" type="Button" parent="OptionsUI"]
 layout_mode = 0
@@ -108,5 +110,9 @@ position = Vector2(525.333, -6.66666)
 
 [node name="neighbour_house" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(525.333, -6.66667)
+
+[node name="OverworldMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bcp5s")
+volume_db = -10.377
 
 [connection signal="pressed" from="OptionsUI/Exit_Button" to="." method="_on_exit_button_pressed"]
