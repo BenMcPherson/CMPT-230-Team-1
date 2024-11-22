@@ -24,6 +24,8 @@ func _on_play_button_pressed():
 func _on_combat_button_pressed():
 	# Open combat.tscn
 	click.play()
+	Global.found_power_up = true
+	Global.found_companion = true
 	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadCombat.tscn")
 

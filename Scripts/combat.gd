@@ -2,19 +2,32 @@ extends Node
 
 const Battle_Units = preload("res://Resources/Battle_Units.tres")
 
-# Get instance from game
+## Get instance from game
+#Buttons
 @onready var battle_action_buttons = $UI/BattleActionButtons
+@onready var power_up_button = $UI/BattleActionButtons/Power_Up_Button
+@onready var companion_button = $UI/BattleActionButtons/Companion_Button
+
 @onready var player_animations = $Player/Player_Animations
 @onready var message_state = $Message
 
 # Music
 @onready var battle_music = $BattleMusic
 
+
 func _ready():
+	visible_buttons()
 	battle_music.play()
 	message_state.hide()
 	start_player_turn()
 
+func visible_buttons():
+	if Global.found_companion == false:
+		companion_button.hide()
+		
+	if Global.found_power_up == false:
+		power_up_button.hide()
+		
 
 func start_enemy_turn():
 	battle_action_buttons.hide() #Hide combat buttons

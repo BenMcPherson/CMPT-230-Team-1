@@ -72,14 +72,14 @@ func take_damage(amount):
 		self.hp -= amount/def
 		
 	if is_dead(): #Player lose/death
-		player_animations.play("Death")
+		player_animations.play(death)
 		await (player_animations.animation_finished)
 		emit_signal("died")
 		queue_free()
 	else: #Player Hurt
-		player_animations.play("Hurt")
+		player_animations.play(hurt)
 		await (player_animations.animation_finished)
-		player_animations.play("Idle")
+		player_animations.play(idle)
 		
 func is_dead():
 	return hp <= 0

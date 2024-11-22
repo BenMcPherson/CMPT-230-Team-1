@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://05gfao8v07up"]
+[gd_scene load_steps=79 format=3 uid="uid://05gfao8v07up"]
 
 [ext_resource type="Script" path="res://Scripts/combat.gd" id="1_3ic73"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="1_4lxwe"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4hhgxtpapj27" path="res://Assets/Player/Player Hurt game 48x48.png" id="4_lsl2q"]
 [ext_resource type="Texture2D" uid="uid://cm5gjks44c01a" path="res://Assets/Player/Player shark Idle game 48x48.png" id="6_k7n8u"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="6_nwsc2"]
+[ext_resource type="Texture2D" uid="uid://bjc04mkiyrgkw" path="res://Assets/Player/Player shark Hurt game 48x48.png" id="7_j6srh"]
 [ext_resource type="Script" path="res://Scripts/Text_Stats Panel.gd" id="8_dvme0"]
 [ext_resource type="Texture2D" uid="uid://qsk3huyx3cdj" path="res://Assets/Player/Player shark Punch game 64x64.png" id="8_xvmeb"]
 [ext_resource type="AudioStream" uid="uid://cpcyxtx311yio" path="res://Assets/SFX/Death.wav" id="9_hp43e"]
@@ -149,6 +150,22 @@ region = Rect2(384, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1vej"]
 atlas = ExtResource("3_tl8ij")
 region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqkyc"]
+atlas = ExtResource("7_j6srh")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ohy2"]
+atlas = ExtResource("7_j6srh")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pxnv"]
+atlas = ExtResource("7_j6srh")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnbps"]
+atlas = ExtResource("7_j6srh")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rghbm"]
 atlas = ExtResource("6_k7n8u")
@@ -342,6 +359,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mqkyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ohy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pxnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnbps")
+}],
+"loop": false,
+"name": &"SharkHurt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rghbm")
 }, {
 "duration": 1.0,
@@ -420,10 +454,8 @@ position = Vector2(530, 317)
 
 [node name="Player_Animations" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_bb7bs")
-animation = &"SharkPunch"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
 z_index = 1

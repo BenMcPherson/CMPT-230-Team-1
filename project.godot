@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 scene_manager="*res://Scripts/scene_manager.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 
