@@ -8,7 +8,10 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 @onready var power_up_button = $UI/BattleActionButtons/Power_Up_Button
 @onready var companion_button = $UI/BattleActionButtons/Companion_Button
 
+#Player specific
 @onready var player_animations = $Player/Player_Animations
+
+#UI
 @onready var message_state = $Message
 @onready var end_turn_message = $"UI/End Turn Message"
 

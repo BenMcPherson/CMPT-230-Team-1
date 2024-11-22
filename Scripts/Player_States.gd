@@ -65,16 +65,17 @@ func _exit_tree():
 	Battle_Units.PlayerState = null
 
 func take_damage(amount):
+	#Reduce incoming damage
 	if temp_def > def:
 		self.hp -= amount/temp_def
 		self.temp_def = init_temp_def
 	else:
 		self.hp -= amount/def
-		
+	#Check if player has died
 	if is_dead(): #Player lose/death
 		player_animations.play(death)
 		await (player_animations.animation_finished)
-		emit_signal("died")
+		emit_signal("died") #emit signal to combat
 		queue_free()
 	else: #Player Hurt
 		player_animations.play(hurt)

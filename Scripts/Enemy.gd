@@ -64,7 +64,7 @@ func attack() -> void:
 func heal() -> void:
 	print("Heal")
 	await(get_tree().create_timer(0.4).timeout)
-	self.hp += mana
+	self.hp += mana #Will heal
 	animated_sprite_2d.play(idle)
 	emit_signal("end_turn")
 
@@ -88,42 +88,48 @@ func bulk_def() -> void:
 	print("End Turn")
 	emit_signal("def_bulk")
 	await(get_tree().create_timer(0.4).timeout)
-	self.def += 1
+	self.def += 1 #Increase defense for a turn
 	emit_signal("end_turn")
 	
 func choose_move():
 	random.randomize()
 	var rng = random.randi_range(0, 2)
+	#If enemy HP is below half transform into Dino
 	if ( hp <= (max_hp/2) ) and (dino_mode == 'Null'):
 		transform()
 
+	#If Player is above half health
 	if Battle_Units.PlayerState.hp >= (Battle_Units.PlayerState.max_hp)/2:
 		if (rng == 0):
-			bulk_def()
+			bulk_def() #End turn and increase defense
 		else:
-			attack()
+			attack() #Attack *higher chance of happening
 	else:
+		#When player is below half
 		if (rng == 0) and (hp < max_hp):
-			heal()
+			heal() #Heal if below health
 		elif rng == 1:
-			attack()
+			attack() #Attack
 		else:
-			bulk_def()
+			bulk_def() #End Turn
 
 func take_damage(amount):
+	#Use enemy defense state to reduce damage
 	if def > init_def:
 		self.hp -= amount/def
 		self.def = init_def
 	else:
 		self.hp -= amount/def
-		
+	
+	#Check if player has died or is hurt
 	if is_dead():
-		Global.dead = true
+		Global.dead = true #prevent Enemy from performing other actions
 		$DeathSFX.play()
 		animated_sprite_2d.play(death)
 		await (animated_sprite_2d.animation_finished)
 		print('Winner')
-		emit_signal("died")
+		emit_signal("died") #Emit signal to combat
+		Global.dead = false
 		queue_free()
 	else:
 		animated_sprite_2d.play(hurt)
