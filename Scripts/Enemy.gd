@@ -28,6 +28,7 @@ var random = RandomNumberGenerator.new()
 @onready var hp_label = $HP_Label
 @onready var animated_sprite_2d = $AnimatedSprite2D
 signal died
+signal def_bulk
 signal end_turn
 
 #When enemy is hurt
@@ -85,6 +86,7 @@ func transform() -> void:
 	
 func bulk_def() -> void:
 	print("End Turn")
+	emit_signal("def_bulk")
 	await(get_tree().create_timer(0.4).timeout)
 	self.def += 1
 	emit_signal("end_turn")

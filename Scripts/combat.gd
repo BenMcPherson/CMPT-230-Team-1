@@ -10,6 +10,7 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 
 @onready var player_animations = $Player/Player_Animations
 @onready var message_state = $Message
+@onready var end_turn_message = $"UI/End Turn Message"
 
 # Music
 @onready var battle_music = $BattleMusic
@@ -60,3 +61,10 @@ func _on_player_states_died():
 func _input(_ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
+
+
+func _on_enemy_def_bulk():
+	end_turn_message.show()
+	await(get_tree().create_timer(0.4).timeout)
+	end_turn_message.hide()
+	pass # Replace with function body.

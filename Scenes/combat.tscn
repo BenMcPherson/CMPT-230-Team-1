@@ -559,6 +559,21 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="End Turn Message" type="Label" parent="UI"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.175
+anchor_bottom = 0.425
+offset_left = 551.0
+offset_top = 299.0
+offset_right = 551.0
+offset_bottom = 299.0
+text = "Enemy Ended
+Their turn"
+horizontal_alignment = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 zoom = Vector2(4, 4)
@@ -582,4 +597,5 @@ stream = ExtResource("19_1fmv4")
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
 [connection signal="died" from="Player_States" to="." method="_on_player_states_died"]
 [connection signal="hp_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_hp_changed"]
+[connection signal="def_bulk" from="Enemy" to="." method="_on_enemy_def_bulk"]
 [connection signal="died" from="Enemy" to="." method="_on_enemy_died"]
