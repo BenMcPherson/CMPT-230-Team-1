@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("shadowed_global_identifier")
 const Battle_Units = preload("res://Resources/Battle_Units.tres")
 @onready var player_animations = $"../Player/Player_Animations"
 
@@ -74,6 +75,7 @@ func take_damage(amount):
 		player_animations.play("Death")
 		await (player_animations.animation_finished)
 		emit_signal("died")
+		queue_free()
 	else: #Player Hurt
 		player_animations.play("Hurt")
 		await (player_animations.animation_finished)

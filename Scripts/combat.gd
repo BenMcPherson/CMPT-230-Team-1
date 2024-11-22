@@ -28,9 +28,10 @@ func start_enemy_turn():
 func start_player_turn():
 	battle_action_buttons.show() #Show combat buttons
 	var player_states = Battle_Units.PlayerState
-	player_states.ap = player_states.max_ap #Reset Action points
-	await(player_states.end_turn) #Wait until action point equal zero
-	start_enemy_turn()
+	if not(player_states.is_dead()):
+		player_states.ap = player_states.max_ap #Reset Action points
+		await(player_states.end_turn) #Wait until action point equal zero
+		start_enemy_turn()
 
 #When enemy dies
 func _on_enemy_died(): #Win function
