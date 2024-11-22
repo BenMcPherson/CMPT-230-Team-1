@@ -33,7 +33,7 @@ func visible_buttons():
 func start_enemy_turn():
 	battle_action_buttons.hide() #Hide combat buttons
 	var enemy = Battle_Units.Enemy
-	if enemy != null: #Check if enemy exists
+	if enemy != null and not(Global.dead): #Check if enemy exists
 		enemy.choose_move() #Run attack function
 		await(enemy.end_turn)
 	start_player_turn()
