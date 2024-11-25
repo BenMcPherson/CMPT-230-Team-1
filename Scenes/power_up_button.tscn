@@ -10,4 +10,5 @@ script = ExtResource("2_wi6ge")
 [node name="HoverInfo" parent="." index="0"]
 description = "Shark Power
 WIll transfrom player
+
 Increase attack and defense"
