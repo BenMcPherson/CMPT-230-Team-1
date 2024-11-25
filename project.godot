@@ -31,12 +31,16 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Milkman_Dialogue": "res://Dialogue/Milkman_Dialogue.dtl",
 "Test Timeline": "res://Dialogue/Test Timeline.dtl"
 }
 glossary/default_case_sensitive=true
 variables={
+"Milk_Choice": false,
 "Response": false
 }
+layout/style_list=[]
+layout/default_style="Default"
 
 [display]
 

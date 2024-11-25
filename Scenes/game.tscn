@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=12 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="3_5crmt"]
 [ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="5_5q08a"]
 [ext_resource type="AudioStream" uid="uid://bit0ksakkkkj1" path="res://Assets/Music/Overworld.mp3" id="6_bcp5s"]
+[ext_resource type="PackedScene" uid="uid://dn85gmormxs7w" path="res://Scenes/NPC/milkman.tscn" id="7_dspin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
 
@@ -43,6 +44,9 @@ polygon = PackedVector2Array(-133.5, 35.75, 675.5, 36.75, 675.5, 78, -136, 69.75
 position = Vector2(-272, 46)
 polygon = PackedVector2Array(802.667, 174, 769.333, 174.667, 770, 123.333, 817.333, 124, 818, 170.667)
 
+[node name="Milkman" parent="." instance=ExtResource("7_dspin")]
+position = Vector2(188.667, 140)
+
 [node name="OptionsUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -60,6 +64,22 @@ text = "Exit To Main Menu"
 [node name="Player" parent="." instance=ExtResource("1_t1oyl")]
 position = Vector2(70, 142)
 collision_layer = 3
+
+[node name="Interaction UI" type="Panel" parent="Player"]
+visible = false
+offset_left = -4.0
+offset_top = -26.6667
+offset_right = 7.0
+offset_bottom = -17.6667
+
+[node name="Label" type="Label" parent="Player/Interaction UI"]
+layout_mode = 0
+offset_top = -0.999995
+offset_right = 13.0
+offset_bottom = 11.0
+text = "'E'"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
 zoom = Vector2(2.55, 2.55)
@@ -115,4 +135,6 @@ position = Vector2(525.333, -6.66667)
 stream = ExtResource("6_bcp5s")
 volume_db = -10.377
 
+[connection signal="cup_of_milk" from="Milkman" to="Player" method="_on_milkman_cup_of_milk"]
+[connection signal="no_milk" from="Milkman" to="Player" method="_on_milkman_no_milk"]
 [connection signal="pressed" from="OptionsUI/Exit_Button" to="." method="_on_exit_button_pressed"]

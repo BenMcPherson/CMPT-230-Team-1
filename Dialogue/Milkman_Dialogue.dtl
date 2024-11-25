@@ -1,0 +1,10 @@
+Milkman: Hello, I am the milkman.
+Milkman: This used to be my house
+Milkman: Until that Annoying Neighbor took it away
+Milkman: If you plan on defeating him please allow me to help
+- Yes
+	set {Milk_Choice} = true
+	Milkman: Wonderfull
+- No
+	set {Milk_Choice} = false
+	Milkman: How terrible

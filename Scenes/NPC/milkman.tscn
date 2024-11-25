@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://dn85gmormxs7w"]
+
+[ext_resource type="Script" path="res://Scripts/NPC/Milkman.gd" id="1_jkgj4"]
+[ext_resource type="Texture2D" uid="uid://vag25h8lcnc3" path="res://Assets/NPC/Milkman/milkman Idle game 48x48.png" id="2_7ntca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yuv0"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk4qb"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsaet"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhbix"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1dr4"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4vjw"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67nug"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvx8f"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cq4m"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fqoi"]
+atlas = ExtResource("2_7ntca")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gfax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yuv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk4qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsaet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhbix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1dr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4vjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67nug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvx8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cq4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fqoi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4wc5"]
+radius = 8.0
+
+[node name="Milkman" type="Node2D"]
+script = ExtResource("1_jkgj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3gfax")
+autoplay = "default"
+frame_progress = 0.936459
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_u4wc5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
