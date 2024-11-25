@@ -40,8 +40,8 @@ variables={
 "Movement": true,
 "Response": false
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Assets/Dialogic style/custom_styleq.tres"]
+layout/default_style="res://Assets/Dialogic style/custom_styleq.tres"
 
 [display]
 
