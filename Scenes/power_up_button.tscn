@@ -6,3 +6,8 @@
 [node name="Power_Up_Button" instance=ExtResource("1_2t334")]
 text = "Shark Power"
 script = ExtResource("2_wi6ge")
+
+[node name="HoverInfo" parent="." index="0"]
+description = "Shark Power
+WIll transfrom player
+Increase attack and defense"

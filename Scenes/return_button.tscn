@@ -6,3 +6,6 @@
 [node name="Return_Button" instance=ExtResource("1_vdxko")]
 text = "Return"
 script = ExtResource("2_r77wd")
+
+[node name="HoverInfo" parent="." index="0"]
+description = "Go back"

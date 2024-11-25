@@ -17,3 +17,10 @@ stream = ExtResource("3_vreim")
 [node name="ClickedSFX" type="AudioStreamPlayer2D" parent="CombatSFX" index="1"]
 stream = ExtResource("4_2itui")
 pitch_scale = 2.25
+
+[node name="HoverInfo" parent="." index="1"]
+description = "Punch
+Deal 2 Damage
+
+Shark Pucnh
+Deal 4 Damage"

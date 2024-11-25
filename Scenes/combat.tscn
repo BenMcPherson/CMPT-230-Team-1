@@ -454,7 +454,7 @@ position = Vector2(530, 317)
 
 [node name="Player_Animations" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_bb7bs")
-animation = &"Idle"
+animation = &"SharkIdle"
 autoplay = "Idle"
 
 [node name="Enemy" parent="." instance=ExtResource("3_sp0yw")]
@@ -531,6 +531,19 @@ theme_override_font_sizes/font_size = 12
 text = "AP: 1"
 horizontal_alignment = 1
 
+[node name="TextBox" type="RichTextLabel" parent="UI/Text_Stats Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.342
+anchor_right = 0.967
+anchor_bottom = 0.776
+offset_left = 0.0499992
+offset_top = 0.00798988
+offset_right = -0.0500031
+offset_bottom = 0.0239754
+scroll_active = false
+
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
 layout_mode = 0
 offset_left = 442.0
@@ -583,13 +596,6 @@ visibility_layer = 161
 position = Vector2(576, 289)
 scale = Vector2(1.71429, 0.932292)
 texture = ExtResource("20_fbc7f")
-
-[node name="Message" type="Label" parent="."]
-offset_left = 442.0
-offset_top = 374.0
-offset_right = 549.0
-offset_bottom = 390.0
-text = "Messages Down Here"
 
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_1fmv4")

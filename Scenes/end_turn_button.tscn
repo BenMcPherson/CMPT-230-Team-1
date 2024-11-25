@@ -6,3 +6,8 @@
 [node name="End_Turn_Button" instance=ExtResource("1_ha7cg")]
 text = "End Turn"
 script = ExtResource("2_af6jh")
+
+[node name="HoverInfo" parent="." index="0"]
+description = "End Turn
+
+Raise defense"

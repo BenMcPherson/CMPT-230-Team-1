@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://c4nvwjvlgbj5v"]
+[gd_scene load_steps=38 format=3 uid="uid://c4nvwjvlgbj5v"]
 
 [ext_resource type="Texture2D" uid="uid://b71ddc0gew0pb" path="res://Assets/Blank/Player Sword Stab 96x48.png" id="1_yhtyy"]
 [ext_resource type="Texture2D" uid="uid://c5jt0pnr7u7pw" path="res://Assets/Blank/Player Death 64x64.png" id="2_ewbfo"]
 [ext_resource type="Texture2D" uid="uid://dmvhprpoouunn" path="res://Assets/Blank/Player Hurt 48x48.png" id="3_l3wmp"]
 [ext_resource type="Texture2D" uid="uid://2vq8ic72aj3g" path="res://Assets/Blank/Player Sword Idle 48x48.png" id="4_nyy8x"]
+[ext_resource type="PackedScene" uid="uid://bbh781looc0gb" path="res://Scenes/hover_info.tscn" id="5_5mp6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbm2f"]
 atlas = ExtResource("1_yhtyy")
@@ -261,3 +262,12 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_1e320")
 animation = &"Attack"
 autoplay = "Idle"
+
+[node name="HoverInfo" parent="." instance=ExtResource("5_5mp6l")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+description = "Annoying Neighbor
+"

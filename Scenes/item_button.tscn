@@ -6,3 +6,8 @@
 [node name="Item_Button" instance=ExtResource("1_5ptes")]
 text = "Item"
 script = ExtResource("2_urw1p")
+
+[node name="HoverInfo" parent="." index="0"]
+description = "Opens up
+
+Inventory"

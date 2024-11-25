@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba4wa15yf0d21"]
+[gd_scene load_steps=3 format=3 uid="uid://ba4wa15yf0d21"]
 
 [ext_resource type="Script" path="res://Scripts/Action_Button.gd" id="1_vlnrw"]
+[ext_resource type="PackedScene" uid="uid://bbh781looc0gb" path="res://Scenes/hover_info.tscn" id="2_sopjb"]
 
 [node name="Action_Button" type="Button"]
 custom_minimum_size = Vector2(29, 13)
@@ -10,5 +11,9 @@ anchor_bottom = 0.076
 offset_right = -15.448
 offset_bottom = -36.248
 script = ExtResource("1_vlnrw")
+
+[node name="HoverInfo" parent="." instance=ExtResource("2_sopjb")]
+layout_mode = 1
+mouse_filter = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

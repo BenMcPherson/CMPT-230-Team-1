@@ -6,3 +6,8 @@
 [node name="Companion_Button" instance=ExtResource("1_of7cc")]
 text = "Companion"
 script = ExtResource("2_k46qe")
+
+[node name="HoverInfo" parent="." index="0"]
+description = "Call Milkman
+
+Heal 5 Health"
