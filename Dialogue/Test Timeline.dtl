@@ -1,0 +1,8 @@
+Narrator: Yo
+Narrator: What's up!
+- Yes
+	set {Response} = true
+	Narrator: You made the correct choice
+- No
+	Wrong Choices
+Custome
