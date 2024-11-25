@@ -73,7 +73,7 @@ func transform() -> void:
 	await(get_tree().create_timer(0.4).timeout)
 	#Update Enemy transformation
 	dino_mode = 'Dino'
-	idle = "Idle"
+	idle = dino_mode
 	damage = 'Attack'
 	hurt = 'Hurt'
 	death = 'Death'

@@ -12,7 +12,6 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 @onready var player_animations = $Player/Player_Animations
 
 #UI
-@onready var message_state = $Message
 @onready var end_turn_message = $"UI/End Turn Message"
 
 # Music
@@ -22,7 +21,6 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 func _ready():
 	visible_buttons()
 	battle_music.play()
-	message_state.hide()
 	start_player_turn()
 
 func visible_buttons():
