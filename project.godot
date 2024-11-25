@@ -37,6 +37,7 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 variables={
 "Milk_Choice": false,
+"Movement": true,
 "Response": false
 }
 layout/style_list=[]

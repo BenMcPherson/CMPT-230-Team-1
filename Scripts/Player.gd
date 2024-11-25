@@ -11,7 +11,9 @@ var can_interact = false
 
 #The player main function
 func _physics_process(delta):
-	player_movement(delta)
+	if Dialogic.VAR.Movement:
+		player_movement(delta)
+		
 	if can_interact == true:
 		if Input.is_key_pressed(KEY_E):
 			Dialogic.start("Milkman_Dialogue")
