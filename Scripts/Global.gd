@@ -12,3 +12,5 @@ var turn = true
 
 #Will control game access; Only for tutorials
 var turorial = true
+
+var interact_with_npc = false

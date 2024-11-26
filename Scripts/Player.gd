@@ -6,17 +6,20 @@ class_name Player extends CharacterBody2D
 #Movement Variables
 var speed = 5000
 var input = Vector2.ZERO
-var can_interact = false
+#var can_interact = false
 
 
 #The player main function
 func _physics_process(delta):
 	if Dialogic.VAR.Movement:
 		player_movement(delta)
-		
-	if can_interact == true:
+	
+	if Global.interact_with_npc:
+		interaction_ui.show()
 		if Input.is_key_pressed(KEY_E):
 			Dialogic.start("Milkman_Dialogue")
+	else:
+		interaction_ui.hide()
 
 func get_input():
 	#Get a 1 or -1 for the x and y direction
@@ -60,12 +63,3 @@ func player_animation(dir_x, dir_y):
 	else:
 		animated_sprite_2d.play("Running")
 		
-
-
-func _on_milkman_cup_of_milk():
-	interaction_ui.show()
-	can_interact = true
-
-
-func _on_milkman_no_milk():
-	interaction_ui.hide()
