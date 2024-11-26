@@ -159,3 +159,19 @@ sprite_frames = SubResource("SpriteFrames_dpy1r")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.214857
+
+[node name="Interaction UI" type="Panel" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -26.6667
+offset_right = 7.0
+offset_bottom = -17.6667
+
+[node name="Label" type="Label" parent="Interaction UI"]
+layout_mode = 0
+offset_top = -0.999995
+offset_right = 13.0
+offset_bottom = 11.0
+text = "'E'"
+horizontal_alignment = 1
+vertical_alignment = 1

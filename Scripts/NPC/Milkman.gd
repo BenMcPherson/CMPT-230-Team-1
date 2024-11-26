@@ -6,6 +6,7 @@ signal no_milk
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
+		print('In contact with player')
 		emit_signal("cup_of_milk")
 
 
