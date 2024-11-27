@@ -134,10 +134,11 @@ position = Vector2(386, 126.667)
 collision_layer = 3
 
 [node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
+position = Vector2(384.667, 88.6667)
 zoom = Vector2(2.55, 2.55)
 limit_left = 0
 limit_top = 0
-limit_right = 1150
+limit_right = 1200
 limit_bottom = 253
 script = ExtResource("5_5q08a")
 follow_node = NodePath("../Player")

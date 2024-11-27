@@ -21,7 +21,6 @@ scale = Vector2(1.18634, 1)
 texture = ExtResource("2_wohh6")
 
 [node name="Railing" type="Sprite2D" parent="Background"]
-scale = Vector2(1, 1)
 texture = ExtResource("3_ws3la")
 
 [node name="Sign" type="Sprite2D" parent="Background"]
