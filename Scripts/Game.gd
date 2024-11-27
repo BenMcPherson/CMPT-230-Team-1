@@ -33,8 +33,9 @@ func _ready():
 	if Global.tutorial:
 		Dialogic.start("Tutorial")
 		get_node("StaticBody2D/tutorial_blocker").disabled = false
-	if !Global.tutorial and !Dialogic.VAR.CompleteTutorial:
-		Dialogic.start("TheBegining")
+	if !Global.tutorial:
+		if !Dialogic.VAR.CompleteTutorial:
+			Dialogic.start("TheBegining")
 		get_node("StaticBody2D/tutorial_blocker").disabled = true
 
 func _physics_process(delta):

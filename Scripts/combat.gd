@@ -37,7 +37,8 @@ func start_enemy_turn():
 	if enemy != null and not(Global.dead): #Check if enemy exists
 		enemy.choose_move() #Run attack function
 		await(enemy.end_turn)
-	start_player_turn()
+	if not(Battle_Units.PlayerState.is_dead()):
+		start_player_turn()
 
 
 func start_player_turn():

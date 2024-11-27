@@ -14,6 +14,9 @@ func _physics_process(delta):
 	change_speed()
 	if Dialogic.VAR.Movement:
 		player_movement(delta)
+	else:
+		var animated_sprite_2d = $AnimatedSprite2D
+		animated_sprite_2d.play("Idle")
 	
 	if Global.interact_with_npc:
 		interaction_ui.show()
