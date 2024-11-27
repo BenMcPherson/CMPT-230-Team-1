@@ -15,3 +15,6 @@ var tutorial = true
 
 var interact_with_npc = false
 var npc = ''
+
+#Scene
+var current_scene = 'game'

@@ -4,6 +4,9 @@ extends BaseScene
 @onready var exit_button = $OptionsUI/Exit_Button
 @onready var camera = $FollowCamera
 
+#Neighbor Hosue Collision detector
+@onready var neighbor_collide = $neighbour_house_trigger/NeighborCollide
+
 var is_UI_open = false
 
 # Music
@@ -25,11 +28,16 @@ func _ready():
 	super()
 	camera.follow_node = player
 	overworld_music.play()
+	Dialogic.VAR.Battle = false
 	if Global.tutorial:
 		Dialogic.start("Tutorial")
 		get_node("StaticBody2D/tutorial_blocker").disabled = false
-	if !Global.tutorial:
+	if !Global.tutorial and !Dialogic.VAR.CompleteTutorial:
+		Dialogic.start("TheBegining")
 		get_node("StaticBody2D/tutorial_blocker").disabled = true
+
+func _physics_process(delta):
+	get_node("neighbour_house_trigger/NeighborCollide").disabled = not(Dialogic.VAR.Battle)
 
 func _input(_ev):
 	if Input.is_key_pressed(KEY_ESCAPE):

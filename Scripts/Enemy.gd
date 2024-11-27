@@ -74,8 +74,8 @@ func transform() -> void:
 	#Update Enemy transformation
 	dino_mode = 'Dino'
 	idle = dino_mode
-	damage = 'Attack'
-	hurt = 'Hurt'
+	damage = 'DinoAttack'
+	hurt = 'DinoHurt'
 	death = 'Death'
 	#Update states
 	self.atk += 4

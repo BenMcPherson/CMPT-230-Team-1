@@ -1,4 +1,16 @@
+set {Movement} = false
 Shark: Shark Shark Shark Shark
 Narrator: The shark said\: Hello. My name is Inigo Montoya.
 Narrator: You killed my father. Prepare to die.
-set {Shark_Choice} = true
+Narrator: ...
+Narrator: Sorry, my bad I was reading the Princess Bride...
+Narrator: The shark is dying and is willing to give you its power. Do you Accept?
+- Yes
+	set {Shark_Choice} = true
+	Shark: Shark Shark Shark
+	Narrator: The shark said\: Avenge me!!!!!!
+- No
+	set {Shark_Choice} = false
+	Shark: Shark Shark Shark
+	Narrator: The shark said\: How terrible
+set {Movement} = true

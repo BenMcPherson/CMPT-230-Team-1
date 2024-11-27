@@ -31,17 +31,42 @@ texture = ExtResource("4_3nfr2")
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(239.136, 140.617)
+position = Vector2(245.926, 130.617)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("1_g1w8f")]
 position = Vector2(261.469, 143.951)
+collision_mask = 3
 connected_scene = "game"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(8.83328, -12.8333)
 shape = SubResource("RectangleShape2D_snp0d")
 
+[node name="Player" parent="." instance=ExtResource("3_qhp3l")]
+position = Vector2(217.037, 121.975)
+
 [node name="Shark" parent="." instance=ExtResource("4_l02dr")]
 position = Vector2(24.1975, 131.605)
 
-[node name="Player" parent="." instance=ExtResource("3_qhp3l")]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(272.667, -46)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-216.371, 155.136)
+build_mode = 1
+polygon = PackedVector2Array(-55.8025, 35.8025, 230.123, 38.5185, 230.123, 61.7284, -55.8025, 63.2099)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(59.4317, 138.84)
+build_mode = 1
+polygon = PackedVector2Array(-54.321, -3.20989, -39.7531, -2.46915, -39.5062, 63.2099, -55.8025, 63.2099)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(56.7157, 107.728)
+build_mode = 1
+polygon = PackedVector2Array(-256.543, 58.5185, -39.7531, 53.8272, -41.4815, 64.9383, -257.284, 65.4321)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(33.2589, 101.309)
+build_mode = 1
+polygon = PackedVector2Array(-305.679, 55.3086, -225.679, 55.0617, -234.815, 71.1111, -235.556, 65.1852, -255.062, 65.1852, -272.839, 89.6296, -305.679, 90.1235)

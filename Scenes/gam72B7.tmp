@@ -16,10 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://6btcxhcb4l05" path="res://Scenes/are_you_sure.tscn" id="14_gueox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb4xe"]
-size = Vector2(26, 32.6666)
+size = Vector2(26, 25.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
-size = Vector2(14.6666, 32.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlyn4"]
 size = Vector2(20, 20.6667)
@@ -100,13 +99,11 @@ texture = ExtResource("5_pbk5v")
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-176, 169.333)
-build_mode = 1
 polygon = PackedVector2Array(-106.417, 2.99965, -106.417, 49.6663, -129.084, 47.6663, -129.751, 0.999649)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
-build_mode = 1
-polygon = PackedVector2Array(29.5827, 4.99965, 4.91599, 4.33298, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 3.66632, -49.7507, 4.33298, -56.4173, 4.33298, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 698.916, 5.66632, 664.916, 4.99965, 567.583, 3.66632, 515.583, 2.99965, 515.583, -11.0004, 503.583, -10.3337, 492.916, -11.0004, 492.916, 3.66632, 465.583, 4.99965, 324.249, 4.33298, 292.249, 3.66632, 291.583, -31.667, 268.916, -31.667, 268.916, 3.66632, 238.916, 4.33298, 92.2493, 3.66632, 66.916, 2.99965, 66.916, -31.667, 44.916, -31.667, 44.2493, 0.999649, 42.2493, 4.99965)
+polygon = PackedVector2Array(36.916, 12.9996, 2.91599, 10.333, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 12.9996, -57.084, 12.9996, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 697.583, 19.6667, 664.916, 9.66632, 562.916, 10.9996, 515.583, 1.66632, 514.916, -31.667, 492.916, -31.667, 492.916, 1.66632, 470.916, 10.9996, 322.249, 11.6663, 292.249, 3.66632, 291.583, -31.667, 268.916, -31.667, 268.916, 3.66632, 239.583, 11.6663, 61.5827, 12.9996, 67.5827, -0.333679, 66.916, -31.667, 44.916, -31.667, 44.2493, 0.999649, 42.2493, 4.99965)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
@@ -114,15 +111,14 @@ polygon = PackedVector2Array(-133.5, 35.75, 675.5, 36.75, 675.5, 78, -136, 69.75
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-272, 46)
-build_mode = 1
 polygon = PackedVector2Array(802.667, 174, 769.333, 174.667, 770, 123.333, 817.333, 124, 818, 170.667)
 
 [node name="tutorial_blocker" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(73.333, 196)
+position = Vector2(58.9997, 200)
 shape = SubResource("RectangleShape2D_mb4xe")
 
 [node name="Cop" parent="." instance=ExtResource("8_n0lbt")]
-position = Vector2(756.667, 146.667)
+position = Vector2(726.667, 136.667)
 
 [node name="Milkman" parent="." instance=ExtResource("7_dspin")]
 position = Vector2(188.667, 140)
@@ -160,7 +156,7 @@ position = Vector2(11.3333, 149.333)
 connected_scene = "beach"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beach_trigger"]
-position = Vector2(-13.3333, 0.333679)
+position = Vector2(-10.6666, -5.99965)
 shape = SubResource("RectangleShape2D_b3723")
 
 [node name="milkman_house_trigger" parent="." instance=ExtResource("3_5crmt")]
@@ -169,14 +165,13 @@ position = Vector2(178.667, 114.667)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="milkman_house_trigger"]
 position = Vector2(-18.0004, -5.66701)
 shape = SubResource("RectangleShape2D_nlyn4")
-disabled = true
 
 [node name="neighbour_house_trigger" parent="." instance=ExtResource("3_5crmt")]
 position = Vector2(591.333, 114)
 connected_scene = "combat"
 
 [node name="NeighborCollide" type="CollisionShape2D" parent="neighbour_house_trigger"]
-position = Vector2(17.3337, 8.66667)
+position = Vector2(17.3337, -3.5)
 shape = SubResource("RectangleShape2D_80ibc")
 
 [node name="player_house_trigger" parent="." instance=ExtResource("3_5crmt")]
@@ -186,29 +181,28 @@ connected_scene = "player_house"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_house_trigger"]
 position = Vector2(0.000335693, -4)
 shape = SubResource("RectangleShape2D_5pba6")
-disabled = true
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(70, 142)
 
 [node name="beach" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-42, 17.3333)
+position = Vector2(-34, 9.33333)
 
 [node name="milkman_house" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(84.6667, 3.33333)
+position = Vector2(89.3333, -8.66667)
 
 [node name="player_house" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(315.333, 4)
+position = Vector2(316, -8.66667)
 
 [node name="neighbour_house" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(546.667, 4)
+position = Vector2(540.667, -7.33334)
 
 [node name="OverworldMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bcp5s")
 volume_db = -10.377
 
 [node name="AreYouSure" parent="." instance=ExtResource("14_gueox")]
-position = Vector2(608.667, 122.667)
+position = Vector2(608.667, 110)
 
 [connection signal="cup_of_milk" from="Milkman" to="Player" method="_on_milkman_cup_of_milk"]
 [connection signal="no_milk" from="Milkman" to="Player" method="_on_milkman_no_milk"]

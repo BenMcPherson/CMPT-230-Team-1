@@ -1,0 +1,7 @@
+set {Movement} = false
+Narrator: You didn't have enough strength to fight your Annoying Neighbor
+Narrator: Go around the Neighborhood and see if anyone will help you defeat him.
+Narrator: I heard someones house was revoked by that Annoying Neighbor go check their.
+Narrator: Also I heard that the beach has been attacked by the Annoying Neighbor, go check that out too.
+set {CompleteTutorial} = true
+set {Movement} = true

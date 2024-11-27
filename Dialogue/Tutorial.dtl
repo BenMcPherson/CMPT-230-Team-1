@@ -1,1 +1,5 @@
+set {Movement} = false
 Narrator: My minifigure gone... Only one person could have done this...
+Narrator: *Go to the house on the right
+Narrator: The controls to move are 'WASD' and to interact with anything is 'E'
+set {Movement} = true

@@ -1,2 +1,5 @@
-Cop: Hello, I am the Law
-Cop: Do not resist
+set {Movement} = false
+Cop: What are you doing here?
+Cop: You cannot go beyond this neighborhood
+Cop: Stay back, I will use force.
+set {Movement} = true

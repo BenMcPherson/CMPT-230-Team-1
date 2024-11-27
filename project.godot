@@ -31,14 +31,18 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Are_You_Sure": "res://Dialogue/Are_You_Sure.dtl",
 "Cop_Dialogue": "res://Dialogue/Cop_Dialogue.dtl",
 "Milkman_Dialogue": "res://Dialogue/Milkman_Dialogue.dtl",
 "Shark_Dialogue": "res://Dialogue/Shark_Dialogue.dtl",
 "Test Timeline": "res://Dialogue/Test Timeline.dtl",
+"TheBegining": "res://Dialogue/TheBegining.dtl",
 "Tutorial": "res://Dialogue/Tutorial.dtl"
 }
 glossary/default_case_sensitive=true
 variables={
+"Battle": false,
+"CompleteTutorial": false,
 "Milk_Choice": false,
 "Movement": true,
 "Response": false,

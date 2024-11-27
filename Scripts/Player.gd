@@ -11,6 +11,7 @@ var input = Vector2.ZERO
 
 #The player main function
 func _physics_process(delta):
+	change_speed()
 	if Dialogic.VAR.Movement:
 		player_movement(delta)
 	
@@ -63,3 +64,12 @@ func player_animation(dir_x, dir_y):
 	else:
 		animated_sprite_2d.play("Running")
 		
+func change_speed():
+	if Global.current_scene == 'beach':
+		scale.x = 0.75
+		scale.y = 0.75
+		speed = 10000
+	else:
+		scale.x = 1
+		scale.y = 1
+		speed = 5000
