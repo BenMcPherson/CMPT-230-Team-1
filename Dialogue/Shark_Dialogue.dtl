@@ -1,3 +1,4 @@
 Shark: Shark Shark Shark Shark
 Narrator: The shark said\: Hello. My name is Inigo Montoya.
 Narrator: You killed my father. Prepare to die.
+set {Shark_Choice} = true

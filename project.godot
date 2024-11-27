@@ -40,7 +40,8 @@ glossary/default_case_sensitive=true
 variables={
 "Milk_Choice": false,
 "Movement": true,
-"Response": false
+"Response": false,
+"Shark_Choice": false
 }
 layout/style_list=["res://Assets/Dialogic style/custom_styleq.tres"]
 layout/default_style="res://Assets/Dialogic style/custom_styleq.tres"
