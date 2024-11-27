@@ -56,7 +56,7 @@ func set_def(value):
 	def = value
 
 func set_temp_def(value):
-	def = value
+	temp_def = value
 
 func _ready():
 	Battle_Units.PlayerState = self
