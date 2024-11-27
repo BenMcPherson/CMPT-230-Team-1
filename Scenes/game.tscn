@@ -1,21 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=18 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
-[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_hs5dk"]
+[ext_resource type="Texture2D" uid="uid://bqnxvyppsmtcn" path="res://Assets/Backgrounds/Neighborhood/background_cloud.png" id="2_nu755"]
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="3_5crmt"]
+[ext_resource type="Texture2D" uid="uid://b0vrp6y1283gx" path="res://Assets/Backgrounds/Neighborhood/houses.png" id="3_06rvo"]
+[ext_resource type="Texture2D" uid="uid://c6f4to027hca2" path="res://Assets/Backgrounds/Neighborhood/sign_layer.png" id="4_m8cpi"]
 [ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="5_5q08a"]
+[ext_resource type="Texture2D" uid="uid://bvcfa6v6vbuun" path="res://Assets/Backgrounds/Neighborhood/tree2.png" id="5_pbk5v"]
+[ext_resource type="Texture2D" uid="uid://bd73uow05bf8m" path="res://Assets/Backgrounds/Neighborhood/bush.png" id="6_arse4"]
 [ext_resource type="AudioStream" uid="uid://bit0ksakkkkj1" path="res://Assets/Music/Overworld.mp3" id="6_bcp5s"]
+[ext_resource type="Texture2D" uid="uid://mx4r88ley6j1" path="res://Assets/Backgrounds/Neighborhood/tree.png" id="7_4a0st"]
 [ext_resource type="PackedScene" uid="uid://dn85gmormxs7w" path="res://Scenes/NPC/milkman.tscn" id="7_dspin"]
 [ext_resource type="PackedScene" uid="uid://codalyw2y1qwi" path="res://Scenes/NPC/cop.tscn" id="8_n0lbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlyn4"]
+size = Vector2(20, 20.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80ibc"]
+size = Vector2(20, 20.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pba6"]
+size = Vector2(20, 22.6667)
 
 [node name="game" type="Node2D"]
 scale = Vector2(1.5, 1.5)
@@ -27,7 +35,63 @@ position = Vector2(272.667, -46)
 [node name="Neighbourhood" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(112.417, 131.667)
 scale = Vector2(1.0026, 1)
-texture = ExtResource("2_hs5dk")
+texture = ExtResource("2_nu755")
+
+[node name="House" type="Sprite2D" parent="StaticBody2D/Neighbourhood"]
+texture = ExtResource("3_06rvo")
+
+[node name="Signs" type="Sprite2D" parent="StaticBody2D/Neighbourhood"]
+texture = ExtResource("4_m8cpi")
+
+[node name="Nature" type="Node2D" parent="StaticBody2D/Neighbourhood"]
+
+[node name="Tree 5" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-42.9723, 2.99966)
+texture = ExtResource("5_pbk5v")
+
+[node name="Tree 6" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-336.21, 5.66632)
+texture = ExtResource("5_pbk5v")
+
+[node name="Bus 1" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-52.2814, 43.6663)
+texture = ExtResource("6_arse4")
+
+[node name="Tree 1" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-104.811, 15.6663)
+texture = ExtResource("7_4a0st")
+
+[node name="Tree 2" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(118.608, 11.6663)
+texture = ExtResource("7_4a0st")
+
+[node name="Tree 3" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(334.047, 12.9997)
+texture = ExtResource("7_4a0st")
+
+[node name="Bus 2" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-154.017, 33.6663)
+texture = ExtResource("6_arse4")
+
+[node name="Bus 3" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(-324.906, 39.6663)
+texture = ExtResource("6_arse4")
+
+[node name="Bus 4" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(71.397, 32.9997)
+texture = ExtResource("6_arse4")
+
+[node name="Bus 5" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(170.473, 30.333)
+texture = ExtResource("6_arse4")
+
+[node name="Bus 6" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(273.538, 39.6663)
+texture = ExtResource("6_arse4")
+
+[node name="Tree 4" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
+position = Vector2(195.74, 16.9997)
+texture = ExtResource("5_pbk5v")
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-176, 169.333)
@@ -35,7 +99,7 @@ polygon = PackedVector2Array(-106.417, 2.99965, -106.417, 49.6663, -129.084, 47.
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
-polygon = PackedVector2Array(55.5827, 10.9996, 2.91599, 10.333, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 12.9996, -57.084, 12.9996, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 697.583, 19.6667, 664.916, 9.66632, 504.916, 10.333, 496.916, -1.66702, 496.916, -31.667, 475.583, -31.667, 475.583, 1.66632, 481.583, 11.6663, 294.916, 12.333, 292.249, 3.66632, 291.583, -31.667, 268.916, -31.667, 268.916, 3.66632, 266.916, 10.9996, 80.2493, 10.9996, 83.5827, -1.66702, 82.916, -31.0004, 64.2493, -31.0004, 64.2493, -1.00035, 60.916, 2.99965)
+polygon = PackedVector2Array(36.916, 12.9996, 2.91599, 10.333, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 12.9996, -57.084, 12.9996, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 697.583, 19.6667, 664.916, 9.66632, 522.249, 11.6663, 515.583, 1.66632, 514.916, -31.667, 492.916, -31.667, 492.916, 1.66632, 496.916, 11.6663, 294.916, 12.333, 292.249, 3.66632, 291.583, -31.667, 268.916, -31.667, 268.916, 3.66632, 266.916, 10.9996, 61.5827, 12.9996, 67.5827, -0.333679, 66.916, -31.667, 44.916, -31.667, 44.2493, 0.999649, 42.2493, 4.99965)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
@@ -66,7 +130,7 @@ offset_bottom = 18.0
 text = "Exit To Main Menu"
 
 [node name="Player" parent="." instance=ExtResource("1_t1oyl")]
-position = Vector2(70, 142)
+position = Vector2(386, 126.667)
 collision_layer = 3
 
 [node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("follow_node")]
@@ -83,12 +147,14 @@ position = Vector2(11.3333, 149.333)
 connected_scene = "beach"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beach_trigger"]
+position = Vector2(-10.6666, -5.99965)
 shape = SubResource("RectangleShape2D_b3723")
 
 [node name="milkman_house_trigger" parent="." instance=ExtResource("3_5crmt")]
 position = Vector2(178.667, 114.667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="milkman_house_trigger"]
+position = Vector2(-18.0004, -5.66701)
 shape = SubResource("RectangleShape2D_nlyn4")
 
 [node name="neighbour_house_trigger" parent="." instance=ExtResource("3_5crmt")]
@@ -96,6 +162,7 @@ position = Vector2(591.333, 114)
 connected_scene = "neighbour_house"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="neighbour_house_trigger"]
+position = Vector2(17.3337, -5)
 shape = SubResource("RectangleShape2D_80ibc")
 
 [node name="player_house_trigger" parent="." instance=ExtResource("3_5crmt")]
@@ -103,6 +170,7 @@ position = Vector2(385.333, 114)
 connected_scene = "player_house"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_house_trigger"]
+position = Vector2(0.000335693, -4)
 shape = SubResource("RectangleShape2D_5pba6")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]

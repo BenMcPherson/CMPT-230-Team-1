@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsaoys8es6c36"]
+[gd_scene load_steps=9 format=3 uid="uid://bsaoys8es6c36"]
 
 [ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_4x8s2"]
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="1_g1w8f"]
+[ext_resource type="Texture2D" uid="uid://c1c1ldiwx5oy4" path="res://Assets/Backgrounds/Beach/dock_background.png" id="2_wohh6"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="3_qhp3l"]
+[ext_resource type="Texture2D" uid="uid://dgldw2bjpeq31" path="res://Assets/Backgrounds/Beach/dock_railing.png" id="3_ws3la"]
+[ext_resource type="Texture2D" uid="uid://u2nr4ufva1yr" path="res://Assets/Backgrounds/Beach/dock_sign.png" id="4_3nfr2"]
 [ext_resource type="PackedScene" uid="uid://cxvbni7hyc3nv" path="res://Scenes/NPC/shark.tscn" id="4_l02dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snp0d"]
@@ -11,6 +14,20 @@ size = Vector2(27.6667, 58.3333)
 [node name="beach" type="Node2D"]
 scale = Vector2(4.05, 4.05)
 script = ExtResource("1_4x8s2")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(140.481, 63.2099)
+scale = Vector2(1.18634, 1)
+texture = ExtResource("2_wohh6")
+
+[node name="Railing" type="Sprite2D" parent="Background"]
+scale = Vector2(1, 1)
+texture = ExtResource("3_ws3la")
+
+[node name="Sign" type="Sprite2D" parent="Background"]
+position = Vector2(107.407, 49.3827)
+scale = Vector2(0.692044, 0.692044)
+texture = ExtResource("4_3nfr2")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
@@ -25,7 +42,7 @@ connected_scene = "game"
 position = Vector2(8.83328, -12.8333)
 shape = SubResource("RectangleShape2D_snp0d")
 
-[node name="Player" parent="." instance=ExtResource("3_qhp3l")]
-
 [node name="Shark" parent="." instance=ExtResource("4_l02dr")]
-position = Vector2(117.531, 137.778)
+position = Vector2(24.1975, 131.605)
+
+[node name="Player" parent="." instance=ExtResource("3_qhp3l")]
