@@ -27,6 +27,7 @@ func toggle_UI():
 func _ready():
 	super()
 	camera.follow_node = player
+	Global.current_scene = 'game'
 	overworld_music.play()
 	Dialogic.VAR.Battle = false
 	if Global.tutorial:

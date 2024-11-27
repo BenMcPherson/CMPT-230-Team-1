@@ -5,13 +5,14 @@ class_name BaseScene extends Node
 
 func _ready():
 	print("yeah")
+	print(Global.current_scene)
 	if scene_manager.player:
 		if player:
 			player.queue_free()
 			
 		player = scene_manager.player
 		add_child(player)
-		
+	Global.current_scene = 'beach'
 	position_player()
 
 
