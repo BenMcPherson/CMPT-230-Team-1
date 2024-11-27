@@ -34,7 +34,8 @@ directories/dtl_directory={
 "Cop_Dialogue": "res://Dialogue/Cop_Dialogue.dtl",
 "Milkman_Dialogue": "res://Dialogue/Milkman_Dialogue.dtl",
 "Shark_Dialogue": "res://Dialogue/Shark_Dialogue.dtl",
-"Test Timeline": "res://Dialogue/Test Timeline.dtl"
+"Test Timeline": "res://Dialogue/Test Timeline.dtl",
+"Tutorial": "res://Dialogue/Tutorial.dtl"
 }
 glossary/default_case_sensitive=true
 variables={
@@ -45,6 +46,26 @@ variables={
 }
 layout/style_list=["res://Assets/Dialogic style/custom_styleq.tres"]
 layout/default_style="res://Assets/Dialogic style/custom_styleq.tres"
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+audio/max_channels=4.0
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
 
 [display]
 
