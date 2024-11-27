@@ -17,7 +17,7 @@ func _physics_process(delta):
 	if Global.interact_with_npc:
 		interaction_ui.show()
 		if Input.is_key_pressed(KEY_E):
-			Dialogic.start("Milkman_Dialogue")
+			Dialogic.start(Global.npc)
 	else:
 		interaction_ui.hide()
 

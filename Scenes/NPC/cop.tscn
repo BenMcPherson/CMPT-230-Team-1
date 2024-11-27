@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://codalyw2y1qwi"]
+
+[ext_resource type="Script" path="res://Scripts/NPC/Cop.gd" id="1_tyi77"]
+[ext_resource type="Texture2D" uid="uid://2vq8ic72aj3g" path="res://Assets/Blank/Player Sword Idle 48x48.png" id="2_coat1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhfjv"]
+atlas = ExtResource("2_coat1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnqwm"]
+atlas = ExtResource("2_coat1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdocl"]
+atlas = ExtResource("2_coat1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reon7"]
+atlas = ExtResource("2_coat1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xglsd"]
+atlas = ExtResource("2_coat1")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q8ic"]
+atlas = ExtResource("2_coat1")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw6dw"]
+atlas = ExtResource("2_coat1")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n6ys"]
+atlas = ExtResource("2_coat1")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo1os"]
+atlas = ExtResource("2_coat1")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k3so"]
+atlas = ExtResource("2_coat1")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3rm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhfjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnqwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdocl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reon7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xglsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q8ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw6dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n6ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo1os")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k3so")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hcdv3"]
+radius = 9.0
+height = 34.0
+
+[node name="Cop" type="Node2D"]
+script = ExtResource("1_tyi77")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t3rm0")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_hcdv3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

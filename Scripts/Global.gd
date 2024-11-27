@@ -14,3 +14,4 @@ var turn = true
 var turorial = true
 
 var interact_with_npc = false
+var npc = ''

@@ -31,7 +31,9 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Cop_Dialogue": "res://Dialogue/Cop_Dialogue.dtl",
 "Milkman_Dialogue": "res://Dialogue/Milkman_Dialogue.dtl",
+"Shark_Dialogue": "res://Dialogue/Shark_Dialogue.dtl",
 "Test Timeline": "res://Dialogue/Test Timeline.dtl"
 }
 glossary/default_case_sensitive=true

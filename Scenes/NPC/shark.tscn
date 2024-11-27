@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://cxvbni7hyc3nv"]
+
+[ext_resource type="Script" path="res://Scripts/NPC/shark.gd" id="1_doemv"]
+[ext_resource type="Texture2D" uid="uid://bmporp3sk45ip" path="res://Assets/NPC/Shark/shark_idle.png" id="1_v6frs"]
+[ext_resource type="Texture2D" uid="uid://b0rdsw2x30xy1" path="res://Assets/NPC/Shark/shark_dead_idle.png" id="2_nc7n3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or2px"]
+atlas = ExtResource("1_v6frs")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc7o5"]
+atlas = ExtResource("1_v6frs")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i8g5"]
+atlas = ExtResource("1_v6frs")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu1cw"]
+atlas = ExtResource("1_v6frs")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8yhn"]
+atlas = ExtResource("2_nc7n3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxrl2"]
+atlas = ExtResource("2_nc7n3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06lbx"]
+atlas = ExtResource("2_nc7n3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ee7l"]
+atlas = ExtResource("2_nc7n3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61bs3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or2px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc7o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i8g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu1cw")
+}],
+"loop": true,
+"name": &"SharkAlive",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8yhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxrl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06lbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ee7l")
+}],
+"loop": true,
+"name": &"SharkDead",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cjxt"]
+radius = 25.0
+
+[node name="Shark" type="Node2D"]
+script = ExtResource("1_doemv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_61bs3")
+animation = &"SharkAlive"
+autoplay = "SharkAlive"
+frame_progress = 0.0407928
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4cjxt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
