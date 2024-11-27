@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=19 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://mx4r88ley6j1" path="res://Assets/Backgrounds/Neighborhood/tree.png" id="7_4a0st"]
 [ext_resource type="PackedScene" uid="uid://dn85gmormxs7w" path="res://Scenes/NPC/milkman.tscn" id="7_dspin"]
 [ext_resource type="PackedScene" uid="uid://codalyw2y1qwi" path="res://Scenes/NPC/cop.tscn" id="8_n0lbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb4xe"]
+size = Vector2(26, 25.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3723"]
 
@@ -109,6 +112,10 @@ polygon = PackedVector2Array(-133.5, 35.75, 675.5, 36.75, 675.5, 78, -136, 69.75
 position = Vector2(-272, 46)
 polygon = PackedVector2Array(802.667, 174, 769.333, 174.667, 770, 123.333, 817.333, 124, 818, 170.667)
 
+[node name="tutorial_blocker" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(58.9997, 200)
+shape = SubResource("RectangleShape2D_mb4xe")
+
 [node name="Cop" parent="." instance=ExtResource("8_n0lbt")]
 position = Vector2(726.667, 136.667)
 
@@ -181,12 +188,13 @@ position = Vector2(70, 142)
 position = Vector2(-34, 9.33333)
 
 [node name="milkman_house" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(89.3333, -8.66667)
 
 [node name="player_house" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(525.333, -6.66666)
+position = Vector2(316, -8.66667)
 
 [node name="neighbour_house" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(525.333, -6.66667)
+position = Vector2(540.667, -7.33334)
 
 [node name="OverworldMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bcp5s")

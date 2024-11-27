@@ -25,8 +25,12 @@ func _ready():
 	super()
 	camera.follow_node = player
 	overworld_music.play()
+	if Global.tutorial:
+		Dialogic.start("Tutorial")
+		get_node("StaticBody2D/tutorial_blocker").disabled = false
+	if !Global.tutorial:
+		get_node("StaticBody2D/tutorial_blocker").disabled = true
 
-	
 func _input(_ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		toggle_UI()

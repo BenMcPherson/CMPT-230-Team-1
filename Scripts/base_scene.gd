@@ -21,6 +21,8 @@ func position_player() -> void:
 	if last_scene.is_empty():
 		last_scene = "any"
 		print("hayeah")
+	elif last_scene.contains("neighbour_house"):
+		Global.tutorial = false
 	for entrance in entrance_markers.get_children():
 		print(last_scene)
 		if entrance is Marker2D and entrance.name == "any" or entrance.name == last_scene:

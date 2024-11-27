@@ -11,7 +11,7 @@ var dead = false
 var turn = true
 
 #Will control game access; Only for tutorials
-var turorial = true
+var tutorial = true
 
 var interact_with_npc = false
 var npc = ''
