@@ -5,7 +5,7 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 ## Get instance from game
 #Buttons
 @onready var battle_action_buttons = $UI/BattleActionButtons
-@onready var power_up_button = $UI/BattleActionButtons/Power_Up_Button
+@onready var item_button = $UI/BattleActionButtons/Item_Button
 @onready var companion_button = $UI/BattleActionButtons/Companion_Button
 
 #Player specific
@@ -28,7 +28,7 @@ func visible_buttons():
 		companion_button.hide()
 		
 	if Global.found_power_up == false:
-		power_up_button.hide()
+		item_button.hide()
 		
 
 func start_enemy_turn():

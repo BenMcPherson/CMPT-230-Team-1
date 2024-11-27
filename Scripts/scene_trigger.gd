@@ -7,4 +7,5 @@ func _on_body_entered(body):
 	if body is Player:
 		Global.found_companion = Dialogic.VAR.Milk_Choice
 		Global.found_power_up = Dialogic.VAR.Shark_Choice
+		print(Global.found_companion, Global.found_power_up)
 		scene_manager.change_scene(body.get_parent(), connected_scene)

@@ -160,7 +160,7 @@ shape = SubResource("RectangleShape2D_nlyn4")
 
 [node name="neighbour_house_trigger" parent="." instance=ExtResource("3_5crmt")]
 position = Vector2(591.333, 114)
-connected_scene = "neighbour_house"
+connected_scene = "combat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="neighbour_house_trigger"]
 position = Vector2(17.3337, -5)
