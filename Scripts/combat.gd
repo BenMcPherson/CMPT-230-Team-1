@@ -34,6 +34,7 @@ func visible_buttons():
 func start_enemy_turn():
 	battle_action_buttons.hide() #Hide combat buttons
 	var enemy = Battle_Units.Enemy
+	enemy.def = enemy.init_def
 	if enemy != null and not(Global.dead): #Check if enemy exists
 		enemy.choose_move() #Run attack function
 		await(enemy.end_turn)
@@ -44,6 +45,7 @@ func start_enemy_turn():
 func start_player_turn():
 	battle_action_buttons.show() #Show combat buttons
 	var player_states = Battle_Units.PlayerState
+	player_states.temp_def = player_states.init_temp_def
 	if not(player_states.is_dead()):
 		player_states.ap = player_states.max_ap #Reset Action points
 		await(player_states.end_turn) #Wait until action point equal zero
@@ -56,7 +58,7 @@ func _on_enemy_died(): #Win function
 
 func _on_player_states_died():
 	battle_action_buttons.hide()
-	get_tree().change_scene_to_file("res://Scenes/LoadingScreens/LoadGame.tscn")
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 
 # Easy Debug Exit

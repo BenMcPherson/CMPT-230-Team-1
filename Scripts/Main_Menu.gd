@@ -14,6 +14,7 @@ extends Node
 
 func _ready():
 	main_menu_music.play()
+	Global.back_to = "res://Scenes/main_menu.tscn"
 
 func _on_play_button_pressed():
 	# Open player.tscn

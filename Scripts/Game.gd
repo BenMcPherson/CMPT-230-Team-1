@@ -27,8 +27,11 @@ func toggle_UI():
 func _ready():
 	super()
 	camera.follow_node = player
+	#Set-up Global variables
+	Global.back_to = "res://Scenes/game.tscn"
 	Global.current_scene = 'game'
 	overworld_music.play()
+	#Set-up Dialogic Variables
 	Dialogic.VAR.Battle = false
 	if Global.tutorial:
 		Dialogic.start("Tutorial")
@@ -38,7 +41,7 @@ func _ready():
 			Dialogic.start("TheBegining")
 		get_node("StaticBody2D/tutorial_blocker").disabled = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_node("neighbour_house_trigger/NeighborCollide").disabled = not(Dialogic.VAR.Battle)
 
 func _input(_ev):

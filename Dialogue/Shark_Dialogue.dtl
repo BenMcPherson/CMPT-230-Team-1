@@ -1,4 +1,5 @@
 set {Movement} = false
+set {InConvo} = true
 if {Shark_Choice} == false:
 	Shark: Shark Shark Shark Shark
 	Narrator: The shark said\: Hello. My name is Inigo Montoya.
@@ -16,4 +17,5 @@ if {Shark_Choice} == false:
 		Narrator: The shark said\: How terrible
 else:
 	Narrator: That was its dying breath
+set {InConvo} = false
 set {Movement} = true

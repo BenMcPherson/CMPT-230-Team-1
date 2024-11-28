@@ -1,5 +1,7 @@
 set {Movement} = false
+set {InConvo} = true
 Cop: What are you doing here?
 Cop: You cannot go beyond this neighborhood
 Cop: Stay back, I will use force.
+set {InConvo} = false
 set {Movement} = true

@@ -1,8 +1,10 @@
 set {Movement} = false
+set {InConvo} = true
 Narrator: You are about to enter your Annoying Neighbors House
 Narrator: Are you ready for a Fight?
 - Yes
 	set {Battle} = true
 - No
 	set {Battle} = false
+set {InConvo} = false
 set {Movement} = true

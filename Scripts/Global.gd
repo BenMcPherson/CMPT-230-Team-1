@@ -18,3 +18,7 @@ var npc = ''
 
 #Scene
 var current_scene = 'game'
+
+var pause = false
+
+var back_to = ''

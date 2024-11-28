@@ -43,6 +43,7 @@ glossary/default_case_sensitive=true
 variables={
 "Battle": false,
 "CompleteTutorial": false,
+"InConvo": false,
 "Milk_Choice": false,
 "Movement": true,
 "Response": false,

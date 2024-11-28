@@ -1,4 +1,5 @@
 set {Movement} = false
+set {InConvo} = true
 Milkman: Hello, I am the milkman.
 Milkman: This used to be my house
 Milkman: Until that Annoying Neighbor took it away
@@ -12,4 +13,5 @@ else:
 	- No
 		set {Milk_Choice} = false
 		Milkman: How terrible
+set {InConvo} = false
 set {Movement} = true

@@ -12,7 +12,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(_body):
 	Global.interact_with_npc = false
 
-func _physics_process(delta):
+func _process(_delta):
 	if Global.found_power_up:
 		animated_sprite_2d.play("SharkDead")
 	else:
