@@ -14,7 +14,9 @@ extends Node
 
 func _ready():
 	main_menu_music.play()
-	Global.back_to = "res://Scenes/main_menu.tscn"
+	Global.back_to = "main_menu"
+	#Global.back_to = get_tree()
+	print(Global.back_to)
 
 func _on_play_button_pressed():
 	# Open player.tscn

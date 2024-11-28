@@ -28,7 +28,8 @@ func _ready():
 	super()
 	camera.follow_node = player
 	#Set-up Global variables
-	Global.back_to = "res://Scenes/game.tscn"
+	Global.back_to = "game"
+	#Global.back_to = get_tree().current_scene
 	Global.current_scene = 'game'
 	overworld_music.play()
 	#Set-up Dialogic Variables

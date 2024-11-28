@@ -6,7 +6,8 @@ class_name BaseScene extends Node
 func _ready():
 	print("yeah")
 	print(Global.current_scene)
-	Global.back_to = "res://Scenes/beach.tscn"
+	Global.back_to = "beach"
+	#Global.back_to = get_tree().current_scene
 	if scene_manager.player:
 		if player:
 			player.queue_free()
