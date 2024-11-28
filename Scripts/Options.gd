@@ -2,7 +2,11 @@ extends Node
 
 # SFX Variables
 @onready var click = $OptionsSFX/ClickSFX
+@onready var options_music = $OptionsMusic
 
+func _ready():
+	options_music.play()
+	
 func _on_back_button_pressed():
 	# Go Back to the main menu
 	click.play()

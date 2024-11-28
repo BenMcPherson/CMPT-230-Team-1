@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 
 @onready var interaction_ui = $"Interaction UI"
+@onready var walking = $Walking
 
 #Movement Variables
 var speed = 5000
@@ -43,6 +44,7 @@ func player_movement(delta):
 	#Stop Player Down
 	if input == Vector2.ZERO:
 		velocity = Vector2.ZERO
+		
 	#Player Runs
 	else:
 		velocity = (input * delta * speed)

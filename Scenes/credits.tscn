@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://iy7exdywgdij"]
+[gd_scene load_steps=5 format=3 uid="uid://iy7exdywgdij"]
 
 [ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_12hlw"]
 [ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="2_xmqjt"]
+[ext_resource type="AudioStream" uid="uid://bpnjums0hbhr8" path="res://Assets/Music/Credits.mp3" id="3_vy08s"]
+[ext_resource type="Texture2D" uid="uid://c1c1ldiwx5oy4" path="res://Assets/Backgrounds/Beach/dock_background.png" id="4_hyo6x"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_12hlw")
@@ -105,7 +107,7 @@ offset_top = 19.0
 offset_right = 365.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 25
-text = "Combat Programmer
+text = "Combat/Dialogue Programmer
 Combat/UI Designer"
 
 [node name="Kelsey_Roles" type="Label" parent="CreditsUI/Roles"]
@@ -162,5 +164,15 @@ text = "CMPT 230: Fall 2024"
 [node name="ClickSFX" type="AudioStreamPlayer2D" parent="CreditsSFX"]
 stream = ExtResource("2_xmqjt")
 pitch_scale = 2.25
+
+[node name="CreditsMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vy08s")
+volume_db = -0.19
+
+[node name="DockBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(575, 323.5)
+scale = Vector2(4.86441, 3.34896)
+texture = ExtResource("4_hyo6x")
 
 [connection signal="pressed" from="CreditsUI/BackButton" to="." method="_on_back_button_pressed"]
