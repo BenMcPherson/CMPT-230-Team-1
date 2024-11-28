@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://5d5up1gfy114"]
+[gd_scene load_steps=25 format=3 uid="uid://5d5up1gfy114"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wcnls"]
 [ext_resource type="Texture2D" uid="uid://d2xeawdo87ws3" path="res://Assets/Player/Player_Idle_game_48x48.png" id="2_6acn7"]
 [ext_resource type="Texture2D" uid="uid://bunnd5yipudfa" path="res://Assets/Player/Player_run_game_48x48.png" id="3_w71sp"]
+[ext_resource type="AudioStream" uid="uid://m4ywuw56u28n" path="res://Assets/SFX/Footsteps.wav" id="4_8eaim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u7bv"]
 radius = 7.0
@@ -175,3 +176,6 @@ offset_bottom = 11.0
 text = "'E'"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8eaim")

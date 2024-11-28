@@ -6,8 +6,10 @@ func _on_pressed():
 	var player_states = Battle_Units.PlayerState
 	var player_animations = main.find_child("Player_Animations")
 	
+	$Click.play()
 	if player_states != null:
 		if player_states.atk == player_states.init_atk:
+			$PowerUp.play()
 			player_states.atk += 4
 			player_states.def += 1
 			#Player become shark

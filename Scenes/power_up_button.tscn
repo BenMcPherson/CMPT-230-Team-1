@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxwlkreltm78x"]
+[gd_scene load_steps=5 format=3 uid="uid://bxwlkreltm78x"]
 
 [ext_resource type="PackedScene" uid="uid://ba4wa15yf0d21" path="res://Scenes/action_button.tscn" id="1_2t334"]
 [ext_resource type="Script" path="res://Scripts/power_up_button.gd" id="2_wi6ge"]
+[ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="3_g2udb"]
+[ext_resource type="AudioStream" uid="uid://cvjitygb33qwr" path="res://Assets/SFX/SharkTransform.wav" id="4_qkfki"]
 
 [node name="Power_Up_Button" instance=ExtResource("1_2t334")]
 text = "Shark Power"
@@ -12,3 +14,12 @@ description = "Shark Power
 WIll transfrom player
 
 Increase attack and defense"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." index="1"]
+stream = ExtResource("3_g2udb")
+pitch_scale = 2.25
+
+[node name="PowerUp" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("4_qkfki")
+volume_db = 10.895
+pitch_scale = 0.52

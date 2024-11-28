@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dctsmnvsxfbsa"]
+[gd_scene load_steps=5 format=3 uid="uid://dctsmnvsxfbsa"]
 
 [ext_resource type="Script" path="res://Scripts/Options.gd" id="1_eljbr"]
 [ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="2_pf48s"]
+[ext_resource type="Texture2D" uid="uid://cu4ngo4rbtl2c" path="res://Assets/Backgrounds/boss_room.png" id="3_rj2d1"]
+[ext_resource type="AudioStream" uid="uid://c8e7s0dkhn634" path="res://Assets/Music/Options.mp3" id="4_818pl"]
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_eljbr")
@@ -115,6 +117,15 @@ text = "Default"
 [node name="ClickSFX" type="AudioStreamPlayer2D" parent="OptionsSFX"]
 stream = ExtResource("2_pf48s")
 pitch_scale = 2.25
+
+[node name="BossRoom" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(577, 321)
+scale = Vector2(6.85714, 6.6875)
+texture = ExtResource("3_rj2d1")
+
+[node name="OptionsMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_818pl")
 
 [connection signal="pressed" from="OptionsUI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="OptionsUI/CreditsButton" to="." method="_on_credits_button_pressed"]

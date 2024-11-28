@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_wcbli"]
 [ext_resource type="Script" path="res://Scripts/MainMenuMoving.gd" id="2_aue0f"]
-[ext_resource type="Texture2D" uid="uid://b0x8x5c5pcq77" path="res://Assets/Backgrounds/Neighbourhood.png" id="2_yhdvm"]
+[ext_resource type="Texture2D" uid="uid://cvvchovybqttk" path="res://Assets/Backgrounds/FullNeighbourhood.png" id="3_4bjcu"]
 [ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="4_48n2p"]
 [ext_resource type="AudioStream" uid="uid://b8enkm22qcrwa" path="res://Assets/Music/Main Menu.mp3" id="5_v36ll"]
 
@@ -68,13 +68,13 @@ text = "Exit
 script = ExtResource("2_aue0f")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1980, 0)
 
-[node name="Neighbourhood" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-z_index = -1
+[node name="FullNeighbourhood" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(1448, 324)
-scale = Vector2(3.76371, 3.76371)
-texture = ExtResource("2_yhdvm")
+position = Vector2(1018.25, 322.75)
+scale = Vector2(1.5059, 2.11093)
+texture = ExtResource("3_4bjcu")
 
 [node name="MenuSFX" type="Node2D" parent="."]
 
