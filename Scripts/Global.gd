@@ -21,4 +21,6 @@ var current_scene = 'game'
 
 var pause = false
 
+var changing = false
+
 var back_to = ''
