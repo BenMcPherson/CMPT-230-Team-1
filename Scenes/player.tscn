@@ -182,6 +182,7 @@ vertical_alignment = 1
 stream = ExtResource("4_8eaim")
 
 [node name="Pause Menu" parent="." instance=ExtResource("5_caetl")]
+visible = false
 offset_left = -16.0
 offset_top = -55.0
 offset_right = -16.0

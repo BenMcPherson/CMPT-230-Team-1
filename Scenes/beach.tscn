@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsaoys8es6c36"]
+[gd_scene load_steps=10 format=3 uid="uid://bsaoys8es6c36"]
 
 [ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_4x8s2"]
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="1_g1w8f"]
 [ext_resource type="Texture2D" uid="uid://c1c1ldiwx5oy4" path="res://Assets/Backgrounds/Beach/dock_background.png" id="2_wohh6"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="3_qhp3l"]
-[ext_resource type="Texture2D" uid="uid://dgldw2bjpeq31" path="res://Assets/Backgrounds/Beach/dock_railing.png" id="3_ws3la"]
 [ext_resource type="Texture2D" uid="uid://u2nr4ufva1yr" path="res://Assets/Backgrounds/Beach/dock_sign.png" id="4_3nfr2"]
+[ext_resource type="Texture2D" uid="uid://xnurqnt6ikxi" path="res://Assets/Backgrounds/Beach/dock_railing_back.png" id="4_6yht0"]
 [ext_resource type="PackedScene" uid="uid://cxvbni7hyc3nv" path="res://Scenes/NPC/shark.tscn" id="4_l02dr"]
+[ext_resource type="Texture2D" uid="uid://rwge0gp44alo" path="res://Assets/Backgrounds/Beach/dock_railing_front.png" id="8_b73qn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snp0d"]
 size = Vector2(27.6667, 58.3333)
@@ -20,13 +21,14 @@ position = Vector2(140.481, 63.2099)
 scale = Vector2(1.18634, 1)
 texture = ExtResource("2_wohh6")
 
-[node name="Railing" type="Sprite2D" parent="Background"]
-texture = ExtResource("3_ws3la")
-
 [node name="Sign" type="Sprite2D" parent="Background"]
 position = Vector2(107.407, 49.3827)
 scale = Vector2(0.692044, 0.692044)
 texture = ExtResource("4_3nfr2")
+
+[node name="Railing Back" type="Sprite2D" parent="Background"]
+position = Vector2(-2.28882e-05, 0)
+texture = ExtResource("4_6yht0")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
@@ -70,3 +72,8 @@ polygon = PackedVector2Array(-256.543, 58.5185, -39.7531, 53.8272, -41.4815, 64.
 position = Vector2(33.2589, 101.309)
 build_mode = 1
 polygon = PackedVector2Array(-305.679, 55.3086, -225.679, 55.0617, -234.815, 71.1111, -235.556, 65.1852, -255.062, 65.1852, -272.839, 89.6296, -305.679, 90.1235)
+
+[node name="Railing Front" type="Sprite2D" parent="."]
+position = Vector2(140.481, 63.2099)
+scale = Vector2(1.18634, 1)
+texture = ExtResource("8_b73qn")
