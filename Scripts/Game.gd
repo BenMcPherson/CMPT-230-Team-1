@@ -27,13 +27,17 @@ func toggle_UI():
 func _ready():
 	super()
 	camera.follow_node = player
-	#Set-up Global variables
+	overworld_music.play()
+	set_up_var()
+	tutorial()
+
+func set_up_var():
 	Global.back_to = "game"
 	#Global.back_to = get_tree().current_scene
 	Global.current_scene = 'game'
-	overworld_music.play()
-	#Set-up Dialogic Variables
 	Dialogic.VAR.Battle = false
+
+func tutorial():
 	if Global.tutorial:
 		Dialogic.start("Tutorial")
 		get_node("StaticBody2D/tutorial_blocker").disabled = false
