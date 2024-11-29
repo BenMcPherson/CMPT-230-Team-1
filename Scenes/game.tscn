@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cv6lwkajd0g37"]
+[gd_scene load_steps=23 format=3 uid="uid://cv6lwkajd0g37"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_7blcj"]
 [ext_resource type="PackedScene" uid="uid://5d5up1gfy114" path="res://Scenes/player.tscn" id="1_t1oyl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vrp6y1283gx" path="res://Assets/Backgrounds/Neighborhood/houses.png" id="3_06rvo"]
 [ext_resource type="Texture2D" uid="uid://c6f4to027hca2" path="res://Assets/Backgrounds/Neighborhood/sign_layer.png" id="4_m8cpi"]
 [ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="5_5q08a"]
+[ext_resource type="Script" path="res://Scripts/Nature.gd" id="5_aexjp"]
 [ext_resource type="Texture2D" uid="uid://bvcfa6v6vbuun" path="res://Assets/Backgrounds/Neighborhood/tree2.png" id="5_pbk5v"]
 [ext_resource type="Texture2D" uid="uid://bd73uow05bf8m" path="res://Assets/Backgrounds/Neighborhood/bush.png" id="6_arse4"]
 [ext_resource type="AudioStream" uid="uid://bit0ksakkkkj1" path="res://Assets/Music/Overworld.mp3" id="6_bcp5s"]
@@ -14,6 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://dn85gmormxs7w" path="res://Scenes/NPC/milkman.tscn" id="7_dspin"]
 [ext_resource type="PackedScene" uid="uid://codalyw2y1qwi" path="res://Scenes/NPC/cop.tscn" id="8_n0lbt"]
 [ext_resource type="PackedScene" uid="uid://6btcxhcb4l05" path="res://Scenes/are_you_sure.tscn" id="14_gueox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nia0o"]
+size = Vector2(16.304, 4.66667)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cokw"]
+radius = 7.31433
+height = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb4xe"]
 size = Vector2(26, 32.6666)
@@ -49,6 +57,7 @@ texture = ExtResource("3_06rvo")
 texture = ExtResource("4_m8cpi")
 
 [node name="Nature" type="Node2D" parent="StaticBody2D/Neighbourhood"]
+script = ExtResource("5_aexjp")
 
 [node name="Tree 5" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
 position = Vector2(-42.9723, 2.99966)
@@ -67,7 +76,7 @@ position = Vector2(-104.811, 15.6663)
 texture = ExtResource("7_4a0st")
 
 [node name="Tree 2" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
-position = Vector2(118.608, 11.6663)
+position = Vector2(118.608, 15.6663)
 texture = ExtResource("7_4a0st")
 
 [node name="Tree 3" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
@@ -87,7 +96,7 @@ position = Vector2(71.397, 32.9997)
 texture = ExtResource("6_arse4")
 
 [node name="Bus 5" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
-position = Vector2(170.473, 30.333)
+position = Vector2(159.231, 30.333)
 texture = ExtResource("6_arse4")
 
 [node name="Bus 6" type="Sprite2D" parent="StaticBody2D/Neighbourhood/Nature"]
@@ -98,6 +107,40 @@ texture = ExtResource("6_arse4")
 position = Vector2(195.74, 16.9997)
 texture = ExtResource("5_pbk5v")
 
+[node name="Area2D" type="Area2D" parent="StaticBody2D/Neighbourhood/Nature"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(274.203, 52.9997)
+shape = SubResource("RectangleShape2D_nia0o")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(-52.2814, 55.6663)
+shape = SubResource("RectangleShape2D_nia0o")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(-325.571, 46.9997)
+shape = SubResource("RectangleShape2D_nia0o")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(-106.141, 42.333)
+shape = SubResource("CapsuleShape2D_6cokw")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(-44.3021, 37.6663)
+shape = SubResource("CapsuleShape2D_6cokw")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(117.943, 40.333)
+shape = SubResource("CapsuleShape2D_6cokw")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(194.411, 43.6663)
+shape = SubResource("CapsuleShape2D_6cokw")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D/Neighbourhood/Nature/Area2D"]
+position = Vector2(332.718, 39.6663)
+shape = SubResource("CapsuleShape2D_6cokw")
+
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-176, 169.333)
 build_mode = 1
@@ -106,7 +149,7 @@ polygon = PackedVector2Array(-106.417, 2.99965, -106.417, 49.6663, -129.084, 47.
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
 build_mode = 1
-polygon = PackedVector2Array(29.5827, 4.99965, 4.91599, 4.33298, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 3.66632, -49.7507, 4.33298, -56.4173, 4.33298, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 698.916, 5.66632, 664.916, 4.99965, 567.583, 3.66632, 515.583, 2.99965, 515.583, -11.0004, 503.583, -10.3337, 492.916, -11.0004, 492.916, 3.66632, 465.583, 4.99965, 324.249, 4.33298, 292.249, 3.66632, 291.583, -9.66702, 268.916, -10.3337, 268.916, 3.66632, 238.916, 4.33298, 92.2493, 3.66632, 66.916, 2.99965, 66.2493, -11.0004, 44.916, -11.0004, 44.2493, 0.999649, 42.2493, 4.99965)
+polygon = PackedVector2Array(29.5827, 4.99965, 4.91599, 4.33298, -3.75067, 3.66632, -41.7507, 3.66632, -41.7507, 3.66632, -49.7507, 4.33298, -56.4173, 4.33298, -57.084, 3.66632, -120.417, 3, -120.417, 3, -118.417, -137, 700.25, -137.667, 698.916, 5.66632, 664.916, 4.99965, 567.583, 3.66632, 515.583, 2.99965, 515.583, -11.0004, 503.583, -10.3337, 492.916, -11.0004, 492.916, 3.66632, 465.583, 4.99965, 449.401, 4.92332, 324.249, 4.33298, 292.249, 3.66632, 291.583, -9.66702, 268.916, -10.3337, 268.916, 3.66632, 238.916, 4.33298, 92.2493, 3.66632, 66.916, 2.99965, 66.2493, -11.0004, 44.916, -11.0004, 44.2493, 0.999649, 42.2493, 4.99965)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-167.583, 175.667)
@@ -210,6 +253,8 @@ volume_db = -10.377
 [node name="AreYouSure" parent="." instance=ExtResource("14_gueox")]
 position = Vector2(608.667, 122.667)
 
+[connection signal="body_entered" from="StaticBody2D/Neighbourhood/Nature/Area2D" to="StaticBody2D/Neighbourhood/Nature" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Neighbourhood/Nature/Area2D" to="StaticBody2D/Neighbourhood/Nature" method="_on_area_2d_body_exited"]
 [connection signal="cup_of_milk" from="Milkman" to="Player" method="_on_milkman_cup_of_milk"]
 [connection signal="no_milk" from="Milkman" to="Player" method="_on_milkman_no_milk"]
 [connection signal="pressed" from="OptionsUI/Exit_Button" to="." method="_on_exit_button_pressed"]
