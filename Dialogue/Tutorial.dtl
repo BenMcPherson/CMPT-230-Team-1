@@ -2,6 +2,7 @@ set {Movement} = false
 set {InConvo} = true
 Narrator: My minifigure gone... Only one person could have done this...
 Narrator: *Go to the house on the right
-Narrator: To move the player, use either 'WASD' or Arrow keys. To interact with objects or NPC press the 'E' key.  To enter the pause menu press the Escape key. To interact with a button use left mouse button.
+Narrator: To move the player, use either 'WASD' or Arrow keys. To interact with objects or NPC press the 'E' key. 
+Narrator: To enter the pause menu press the Escape key. To interact with a button use left mouse button.
 set {InConvo} = false
 set {Movement} = true
