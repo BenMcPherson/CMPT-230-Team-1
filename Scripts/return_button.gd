@@ -14,7 +14,8 @@ func _on_pressed():
 	if attack != null and item != null and companion != null and end_turn != null and power_up != null and return_button != null:
 		attack.show()
 		item.show()
-		companion.show()
+		if Global.found_companion:
+			companion.show()
 		end_turn.show()
 		power_up.hide()
 		return_button.hide()

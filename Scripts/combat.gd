@@ -54,7 +54,7 @@ func start_player_turn():
 #When enemy dies
 func _on_enemy_died(): #Win function
 	battle_action_buttons.hide()
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/end_game.tscn")
 
 func _on_player_states_died():
 	battle_action_buttons.hide()

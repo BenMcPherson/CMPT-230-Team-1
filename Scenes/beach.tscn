@@ -18,8 +18,8 @@ scale = Vector2(4.05, 4.05)
 script = ExtResource("1_4x8s2")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(140.481, 63.2099)
-scale = Vector2(1.18634, 1)
+position = Vector2(142.592, 63.2099)
+scale = Vector2(1.20423, 1)
 texture = ExtResource("2_wohh6")
 
 [node name="Sign" type="Sprite2D" parent="Background"]

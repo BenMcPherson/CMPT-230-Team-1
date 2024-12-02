@@ -1,0 +1,152 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwf5qu2qttenf"]
+
+[ext_resource type="Script" path="res://Scripts/end_game.gd" id="1_6g0sh"]
+
+[node name="End Game" type="Node"]
+script = ExtResource("1_6g0sh")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Names" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 215.0
+offset_right = 451.0
+offset_bottom = 600.0
+
+[node name="Benjamin" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 25.0
+offset_right = 313.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 25
+text = "Benjamin McPherson"
+
+[node name="Kelsey" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 94.0
+offset_right = 277.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 25
+text = "Kelsey Pascual"
+
+[node name="Michael" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 168.0
+offset_right = 287.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 25
+text = "Michael Shkrobot"
+
+[node name="Ryan" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 237.0
+offset_right = 252.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 25
+text = "Ryan Bernal
+"
+
+[node name="Special Thanks" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 324.0
+offset_right = 358.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 25
+text = "Special Thanks To:"
+
+[node name="Roles" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 515.0
+offset_top = 219.0
+offset_right = 1073.0
+offset_bottom = 602.0
+
+[node name="Benjamin_Roles" type="Label" parent="Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 365.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 25
+text = "Combat/Dialogue Programmer
+Combat/UI Designer"
+
+[node name="Kelsey_Roles" type="Label" parent="Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 91.0
+offset_right = 497.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 25
+text = "Project Manager/Story Writer
+Environment Programmer"
+
+[node name="Michael_Roles" type="Label" parent="Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 165.0
+offset_right = 422.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 25
+text = "Character/Level Designer
+Story Writer"
+
+[node name="Ryan_Roles" type="Label" parent="Roles"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 231.0
+offset_right = 453.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 25
+text = "Music/SFX Designer
+UI Programmer"
+
+[node name="Dr and Class" type="Label" parent="Roles"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 320.0
+offset_right = 545.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 25
+text = "Dr. Sam Qorbani
+The CMPT 230 Fall 2024 Class"
+
+[node name="You Win" type="Label" parent="."]
+offset_left = 414.0
+offset_top = 89.0
+offset_right = 718.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 25
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="Thank you" type="Label" parent="."]
+offset_left = 414.0
+offset_top = 139.0
+offset_right = 718.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 25
+text = "Thank You for playing"
+horizontal_alignment = 1
+
+[node name="Main Menu" type="Button" parent="."]
+offset_top = 603.0
+offset_right = 198.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 20
+text = "Back to Main menu"
+
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
