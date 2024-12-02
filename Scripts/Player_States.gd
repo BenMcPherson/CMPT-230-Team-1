@@ -73,6 +73,8 @@ func take_damage(amount):
 		self.hp -= amount/def
 	#Check if player has died
 	if is_dead(): #Player lose/death
+		$BattleMusic.stop()
+		$PlayerDeathSFX.play()
 		player_animations.play(death)
 		await (player_animations.animation_finished)
 		emit_signal("died") #emit signal to combat

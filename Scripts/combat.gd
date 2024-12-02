@@ -15,7 +15,7 @@ const Battle_Units = preload("res://Resources/Battle_Units.tres")
 @onready var end_turn_message = $"UI/End Turn Message"
 
 # Music
-@onready var battle_music = $BattleMusic
+@onready var battle_music = $Player_States/BattleMusic
 
 
 func _ready():

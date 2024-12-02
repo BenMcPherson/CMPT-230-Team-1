@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_12hlw"]
 [ext_resource type="AudioStream" uid="uid://cgcr7o4tmfnfk" path="res://Assets/SFX/ButtonClicked.wav" id="2_xmqjt"]
-[ext_resource type="AudioStream" uid="uid://bpnjums0hbhr8" path="res://Assets/Music/Credits.mp3" id="3_vy08s"]
+[ext_resource type="AudioStream" uid="uid://bpnjums0hbhr8" path="res://Assets/Music/Beach.mp3" id="3_vy08s"]
 [ext_resource type="Texture2D" uid="uid://c1c1ldiwx5oy4" path="res://Assets/Backgrounds/Beach/dock_background.png" id="4_hyo6x"]
 
 [node name="Credits" type="Node2D"]
