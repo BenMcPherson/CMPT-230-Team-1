@@ -29,7 +29,7 @@ offset_top = 591.0
 offset_right = 182.0
 offset_bottom = 645.0
 theme_override_font_sizes/font_size = 20
-text = "Back to Main Menu"
+text = "Back"
 
 [node name="CreditsButton" type="Button" parent="OptionsUI"]
 layout_mode = 0
