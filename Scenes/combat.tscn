@@ -448,6 +448,12 @@ script = ExtResource("1_3ic73")
 [node name="Player_States" type="Node" parent="."]
 script = ExtResource("2_paqux")
 
+[node name="PlayerDeathSFX" type="AudioStreamPlayer2D" parent="Player_States"]
+stream = ExtResource("9_hp43e")
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="Player_States"]
+stream = ExtResource("19_1fmv4")
+
 [node name="Player" type="Node2D" parent="."]
 z_index = 1
 position = Vector2(530, 317)
@@ -596,9 +602,6 @@ visibility_layer = 161
 position = Vector2(576, 289)
 scale = Vector2(1.71429, 0.932292)
 texture = ExtResource("20_fbc7f")
-
-[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_1fmv4")
 
 [connection signal="ap_changed" from="Player_States" to="UI/Text_Stats Panel" method="_on_player_states_ap_changed"]
 [connection signal="died" from="Player_States" to="." method="_on_player_states_died"]

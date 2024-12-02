@@ -9,6 +9,8 @@ var speed = 5000
 var input = Vector2.ZERO
 #var can_interact = false
 
+var is_walking = false
+
 
 #The player main function
 func _physics_process(delta):
@@ -20,6 +22,8 @@ func _physics_process(delta):
 		animated_sprite_2d.play("Idle")
 	
 	if Global.interact_with_npc:
+		$Timer.stop()
+		$Walking.stop()
 		interaction_ui.show()
 		if Input.is_key_pressed(KEY_E):
 			Dialogic.start(Global.npc)
@@ -44,10 +48,16 @@ func player_movement(delta):
 	#Stop Player Down
 	if input == Vector2.ZERO:
 		velocity = Vector2.ZERO
+		$Timer.stop()
+		$Walking.stop()
 		
 	#Player Runs
 	else:
 		velocity = (input * delta * speed)
+		if $Timer.time_left <= 0:
+			$Walking.play()
+			$Timer.start(0.2)
+		
 	
 	#In-built function to move
 	move_and_slide()

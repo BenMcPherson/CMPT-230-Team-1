@@ -36,3 +36,5 @@ func position_player() -> void:
 		if entrance is Marker2D and entrance.name == "any" or entrance.name == last_scene:
 			print(last_scene)
 			player.global_position = entrance.global_position
+			if $BeachMusic != null:
+				$BeachMusic.play()
