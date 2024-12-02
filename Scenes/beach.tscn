@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsaoys8es6c36"]
+[gd_scene load_steps=11 format=3 uid="uid://bsaoys8es6c36"]
 
 [ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_4x8s2"]
 [ext_resource type="PackedScene" uid="uid://qr7qhi7ny41q" path="res://Scenes/scene_trigger.tscn" id="1_g1w8f"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xnurqnt6ikxi" path="res://Assets/Backgrounds/Beach/dock_railing_back.png" id="4_6yht0"]
 [ext_resource type="PackedScene" uid="uid://cxvbni7hyc3nv" path="res://Scenes/NPC/shark.tscn" id="4_l02dr"]
 [ext_resource type="Texture2D" uid="uid://rwge0gp44alo" path="res://Assets/Backgrounds/Beach/dock_railing_front.png" id="8_b73qn"]
+[ext_resource type="AudioStream" uid="uid://bpnjums0hbhr8" path="res://Assets/Music/Beach.mp3" id="9_khash"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snp0d"]
 size = Vector2(27.6667, 58.3333)
@@ -77,3 +78,7 @@ polygon = PackedVector2Array(-305.679, 55.3086, -225.679, 55.0617, -234.815, 71.
 position = Vector2(140.481, 63.2099)
 scale = Vector2(1.18634, 1)
 texture = ExtResource("8_b73qn")
+
+[node name="BeachMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_khash")
+volume_db = -10.377
