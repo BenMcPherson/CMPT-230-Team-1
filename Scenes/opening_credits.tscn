@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://b16cg1xlbm6qf"]
+
+[ext_resource type="Script" path="res://Scripts/opening_credits.gd" id="1_xqu7g"]
+[ext_resource type="Texture2D" uid="uid://boko2xaesf2vl" path="res://Assets/Pictures/WhiteGodot.png" id="2_ugrac"]
+[ext_resource type="Texture2D" uid="uid://ctr4nxrbrwpwr" path="res://Assets/Pictures/minifigure.png" id="3_pv50a"]
+
+[node name="OpeningCredits" type="Node2D"]
+script = ExtResource("1_xqu7g")
+
+[node name="OpeningUI" type="Control" parent="."]
+custom_minimum_size = Vector2(1161, 651)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WARNING" type="Label" parent="OpeningUI"]
+visible = false
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 654.0
+theme_override_font_sizes/font_size = 30
+text = "WARNING: This story is a work of fiction. This game depicts
+comic mischief, fantasy violence, violence, violent references,
+and slapstick humour. Anything that has been depicted in 
+the game should not be tried or attempted in real life.
+
+People who turn into sharks, sharks that can talk, an
+annoying neighbour who stole your minifigure and can turn
+into a dragon, a mysterious cat lady who takes care of
+dogs, a milkman who can buff you with milk, and a
+hidden cop who interestingly stands at the end of the
+neighbourhood for an unprecendented amount of time aren't
+real (Maybe).
+
+Player Discretion has been adviced..."
+
+[node name="GodotCredit" type="Control" parent="OpeningUI"]
+anchors_preset = 0
+offset_right = 1161.0
+offset_bottom = 651.0
+
+[node name="PoweredBy" type="Label" parent="OpeningUI/GodotCredit"]
+visible = false
+offset_left = 460.0
+offset_top = 163.0
+offset_right = 680.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 30
+text = "Powered By:"
+
+[node name="GodotGameEngine" type="Label" parent="OpeningUI/GodotCredit"]
+visible = false
+offset_left = 405.0
+offset_top = 487.0
+offset_right = 755.0
+offset_bottom = 527.0
+theme_override_font_sizes/font_size = 30
+text = "Godot Game Engine"
+
+[node name="WhiteGodot" type="Sprite2D" parent="OpeningUI/GodotCredit"]
+visible = false
+position = Vector2(570, 330)
+scale = Vector2(0.226074, 0.234863)
+texture = ExtResource("2_ugrac")
+
+[node name="Minifigure" type="Sprite2D" parent="OpeningUI"]
+visible = false
+position = Vector2(371, 322)
+scale = Vector2(0.274247, 0.272988)
+texture = ExtResource("3_pv50a")
+
+[node name="Team1" type="Label" parent="OpeningUI"]
+visible = false
+layout_mode = 0
+offset_left = 562.0
+offset_top = 299.0
+offset_right = 972.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 30
+text = "Team 1: The Only One"
