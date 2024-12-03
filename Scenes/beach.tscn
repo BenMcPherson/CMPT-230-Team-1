@@ -75,6 +75,7 @@ build_mode = 1
 polygon = PackedVector2Array(-305.679, 55.3086, -225.679, 55.0617, -234.815, 71.1111, -235.556, 65.1852, -255.062, 65.1852, -272.839, 89.6296, -305.679, 90.1235)
 
 [node name="Railing Front" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(140.481, 63.2099)
 scale = Vector2(1.18634, 1)
 texture = ExtResource("8_b73qn")
