@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Redneck Redemtion: Battle of the Mini Figure"
+config/name="Redneck Redemption: Battle of the Mini Figure"
 run/main_scene="res://Scenes/opening_credits.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/MiniFigure/mini_figure.png"
