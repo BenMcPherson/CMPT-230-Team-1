@@ -27,42 +27,64 @@ text = "Redneck Redemption
 Battle for The Minifigure"
 
 [node name="Play_Button" type="Button" parent="Menu_UI"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 228.0
-offset_right = 387.0
-offset_bottom = 325.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.103
+anchor_top = 0.35
+anchor_right = 0.333
+anchor_bottom = 0.5
+offset_left = 0.416992
+offset_top = 0.149979
+offset_right = 0.386993
+offset_bottom = -0.5
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
 [node name="Combat_Button" type="Button" parent="Menu_UI"]
-layout_mode = 0
-offset_left = 744.0
-offset_top = 229.0
-offset_right = 1011.0
-offset_bottom = 326.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.641
+anchor_top = 0.352
+anchor_right = 0.871
+anchor_bottom = 0.5
+offset_left = -0.20105
+offset_top = -0.152023
+offset_right = -0.231079
+offset_bottom = 0.5
 theme_override_font_sizes/font_size = 40
 text = "Combat"
 
 [node name="Settings_Button" type="Button" parent="Menu_UI"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 456.0
-offset_right = 387.0
-offset_bottom = 553.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.103
+anchor_top = 0.7
+anchor_right = 0.333
+anchor_bottom = 0.849
+offset_left = 0.416992
+offset_top = 0.299957
+offset_right = 0.386993
+offset_bottom = 0.300964
 theme_override_font_sizes/font_size = 40
 text = "Settings
 "
+icon_alignment = 1
 
 [node name="Exit_Button" type="Button" parent="Menu_UI"]
-layout_mode = 0
-offset_left = 744.0
-offset_top = 458.0
-offset_right = 1011.0
-offset_bottom = 555.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.641
+anchor_top = 0.704
+anchor_right = 0.871
+anchor_bottom = 0.853
+offset_left = -0.20105
+offset_top = -0.304047
+offset_right = -0.231079
+offset_bottom = -0.30304
 theme_override_font_sizes/font_size = 40
 text = "Exit
 "
+icon_alignment = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_aue0f")

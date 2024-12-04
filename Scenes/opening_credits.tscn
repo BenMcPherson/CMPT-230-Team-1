@@ -10,16 +10,20 @@ script = ExtResource("1_xqu7g")
 [node name="OpeningUI" type="Control" parent="."]
 custom_minimum_size = Vector2(1161, 651)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="WARNING" type="Label" parent="OpeningUI"]
-visible = false
-layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 654.0
-theme_override_font_sizes/font_size = 30
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.995
+anchor_bottom = 1.005
+offset_right = -0.195068
+offset_bottom = -0.255005
+theme_override_font_sizes/font_size = 22
 text = "WARNING: This story is a work of fiction. This game depicts
 comic mischief, fantasy violence, violence, violent references,
 and slapstick humour. Anything that has been depicted in 
@@ -34,14 +38,20 @@ neighbourhood for an unprecendented amount of time aren't
 real (Maybe).
 
 Player Discretion has been adviced..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GodotCredit" type="Control" parent="OpeningUI"]
-anchors_preset = 0
-offset_right = 1161.0
-offset_bottom = 651.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PoweredBy" type="Label" parent="OpeningUI/GodotCredit"]
 visible = false
+layout_mode = 0
 offset_left = 460.0
 offset_top = 163.0
 offset_right = 680.0
@@ -51,6 +61,7 @@ text = "Powered By:"
 
 [node name="GodotGameEngine" type="Label" parent="OpeningUI/GodotCredit"]
 visible = false
+layout_mode = 0
 offset_left = 405.0
 offset_top = 487.0
 offset_right = 755.0
@@ -79,3 +90,6 @@ offset_right = 972.0
 offset_bottom = 339.0
 theme_override_font_sizes/font_size = 30
 text = "Team 1: The Only One"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
