@@ -6,7 +6,7 @@ class_name BaseScene extends Node
 func _ready():
 	print("yeah")
 	print(Global.current_scene)
-	Global.back_to = "beach"
+	Global.back_to = "game"
 	#Global.back_to = get_tree().current_scene
 	if scene_manager.player and not(Global.changing):
 		if player:

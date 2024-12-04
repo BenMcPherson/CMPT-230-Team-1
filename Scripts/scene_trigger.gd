@@ -5,6 +5,7 @@ var player
 
 func _on_body_entered(body):
 	print(connected_scene)
+	print('Touching')
 	if connected_scene == 'combat':
 		Global.tutorial = false
 		
